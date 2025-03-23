@@ -1,0 +1,55 @@
+<view class="container">
+  
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">优惠券列表</view>
+  </view> -->
+  
+  <!-- Tabs -->
+  <view class="tabs">
+    <view class="tab {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-tab="0">
+      待使用
+      <view class="tab-line" wx:if="{{currentTab === 0}}"></view>
+    </view>
+    <view class="tab {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-tab="1">
+      已使用
+      <view class="tab-line" wx:if="{{currentTab === 1}}"></view>
+    </view>
+    <view class="tab {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-tab="2">
+      已失效
+      <view class="tab-line" wx:if="{{currentTab === 2}}"></view>
+    </view>
+  </view>
+  
+  <!-- Filter -->
+  <view class="filter">
+    <view class="filter-tag">商城券</view>
+  </view>
+  
+  <!-- Coupon List -->
+  <view class="coupon-list">
+    <view class="coupon-item" wx:for="{{couponList}}" wx:key="coupon_id">
+      <view class="coupon-left">
+        <view class="coupon-amount">
+          <text class="currency">¥</text>
+          <text class="amount">{{item.coupon_price}}</text>
+        </view>
+        <view class="coupon-condition">满¥{{item.available_min_price}}可使用</view>
+      </view>
+      <view class="coupon-divider"></view>
+      <view class="coupon-right">
+        <view class="coupon-desc">{{item.coupon_name}}</view>
+        <view class="coupon-expiry">{{item.deadline}}前有效</view>
+      </view>
+      <view class="use-button" wx:if="{{item.is_received == 0}}" bindtap="useCoupon" data-id="{{item.coupon_id}}" data-product-id="{{item.product_id}}" data-price="{{item.product_price}}" data-min-price="{{item.available_min_price}}" data-deadline="{{item.deadline}}">去使用</view>
+    </view>
+    
+    <!-- Empty state when no coupons -->
+    <view class="empty-state" wx:if="{{couponList.length === 0 && !loading}}">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/coupon-blank.png" mode="aspectFit"></image>
+      <text>暂无优惠券</text>
+    </view>
+  </view>
+</view> 

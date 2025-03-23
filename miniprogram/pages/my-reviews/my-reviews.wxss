@@ -1,0 +1,342 @@
+page {
+  background-color: #F7F7F2;
+  min-height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 30rpx;
+}
+
+/* 标签栏样式 */
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-bottom: 1rpx solid #F5F5F5;
+  padding: 0 20rpx;
+}
+
+.tab-item {
+  flex: 1;
+  height: 88rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.tab-item.active {
+  color: #6D8F56;
+  font-weight: 500;
+}
+
+.tab-item.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 20rpx);
+  height: 70%;
+  border-radius: 8rpx;
+  z-index: 1;
+}
+
+.review-delete image {
+  width: 18rpx;
+  height: 18rpx;
+}
+
+.tab-line {
+  position: absolute;
+  bottom: 0;
+  width: 80rpx;
+  height: 6rpx;
+  background-color: #6D8F56;
+  border-radius: 3rpx;
+}
+
+/* 评价列表样式 */
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.review-item {
+  margin-bottom: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+/* 商店信息 */
+.store-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.store-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.store-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.store-name text {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.store-status {
+  font-size: 24rpx;
+}
+
+.status-text {
+  color: #999999;
+}
+
+/* 商品信息 */
+.product-info {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.product-image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.product-price-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 30rpx;
+  color: #FF6B35;
+  font-weight: 500;
+}
+
+.product-count {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20rpx;
+  gap: 20rpx;
+}
+
+.action-button {
+  padding: 12rpx 24rpx;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+  border: 1rpx solid #DDDDDD;
+}
+
+.action-button.delete {
+  color: #999999;
+}
+
+.action-button.primary {
+  color: #F9AE49;
+  border-color: #F9AE49;
+}
+
+.action-button.secondary {
+  color: #666666;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.empty-icon {
+  width: 449rpx;
+  height: 449rpx;
+  margin-bottom: 30rpx;
+}
+
+.empty-state text {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+/* 新增已评价卡片样式 */
+.review-card {
+  margin-bottom: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 30rpx;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.review-date {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.review-actions {
+  display: flex;
+}
+
+.review-anonymous, .review-delete {
+  font-size: 26rpx;
+  color: #999999;
+  margin-left: 20rpx;
+}
+
+.review-content {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+.review-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.review-image {
+  width: 210rpx;
+  height: 210rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 8rpx;
+  background-color: #F5F5F5;
+}
+
+/* 底部弹窗样式 */
+.modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-dialog {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  z-index: 1001;
+  border-radius: 24rpx 24rpx 0 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  padding: 40rpx 30rpx;
+}
+
+.modal-show {
+  transform: translateY(0);
+}
+
+.modal-title {
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.modal-close {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+
+.modal-close image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.modal-content {
+  padding: 10rpx 0 30rpx;
+}
+
+.modal-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.modal-item-icon {
+  margin-right: 20rpx;
+}
+
+.modal-item-icon image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.modal-item-text {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-item-desc {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 4rpx;
+  margin-left: 15rpx;
+} 

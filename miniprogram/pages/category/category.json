@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "custom-tabbar": "/pages/custom-tabbar/custom-tabbar"
+  },
+  "navigationBarTitleText": "商品分类"
+} 

@@ -1,0 +1,136 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <view class="title">
+        <view class="title-left">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home.png" bindtap="navigateToHome" mode="widthFix"></image>
+        </view>
+        <view class="title-right">
+            <text>商品分类</text>
+        </view>
+    </view>
+    <view class="title-img">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/category/banner.png" mode="widthFix"></image>
+    </view>
+    </view>
+    <view class="title-content-container">
+      <view class="title-menu-container">
+        <block wx:for="{{categoryData}}" wx:key="categoryId">
+          <view class="title-menu-item-{{index === 0 ? 'product' : 'content'}} {{activeTab === item.categoryId ? 'title-menu-item-active' : ''}}" 
+                bindtap="switchTab" 
+                data-id="{{item.categoryId}}">
+            <text>{{item.categoryName}}</text>
+          </view>
+        </block>
+        <view class="title-menu-item-content-free-end"></view>
+      </view>
+      <view class="title-product-container">
+        <view class="market-banner" wx:if="{{activeTab === 9}}">
+            <view class="market-banner-title">
+                <text>我的</text>
+                <view class="market-banner-title-line" bindtap="navigateToMarketDetail">
+                    <text>查看全部</text>
+                    <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+                </view>
+            </view>
+            <view class="market-banner-content-image">
+                <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/category/dan.jpg" mode="widthFix" class="egg-banner"></image>
+            </view>
+            <view class="market-stats">
+                    <view class="market-stats-item sold">
+                        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/category/selled.png" mode="aspectFit"></image>
+                        <text>已卖出<text class="highlight">{{marketStats.soldCount}}</text>个</text>
+                    </view>
+                    <view class="market-stats-item unsold">
+                        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/category/nosell.png" mode="aspectFit"></image>
+                        <text>未卖出<text class="highlight">{{marketStats.unsoldCount}}</text>个</text>
+                    </view>
+            </view>
+        </view>
+        <view class="recommendations-list" wx:if="{{activeTab !== 9}}">
+        <block wx:for="{{products}}" wx:for-item="category" wx:key="categoryName">
+            <view class="title-product-item">
+                <text>{{category.categoryName}}</text>
+            </view>
+            <block wx:for="{{category.list}}" wx:for-item="row" wx:key="*this">
+                <view class="recommendations-list-item">
+                    <view class="recommendations-list-item-left" wx:if="{{row.left}}">
+                        <image src="{{row.left.img}}" mode="widthFix" bindtap="navigateToDetail" data-id="{{row.left.id}}"></image>
+                        <text class="recommendations-list-item-left-title" bindtap="navigateToDetail" data-id="{{row.left.id}}">{{row.left.name}}</text>
+                        <text class="recommendations-list-item-left-sell">已售{{row.left.sell}}</text>
+                        <view class="recommendations-list-item-left-price">
+                            <text class="recommendations-list-item-left-price-title">￥{{row.left.price}}</text>
+                            <image wx:if="{{row.left.isShowCart}}" 
+                                   class="recommendations-list-item-left-price-image" 
+                                   src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/buycart.png" 
+                                   mode="widthFix"
+                                   bindtap="toggleCartControls"
+                                   data-id="{{row.left.id}}"></image>
+                            <view class="recommendations-list-item-left-count-tips" wx:if="{{row.left.isShowCart}}">
+                              <text>x{{row.left.quantity}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="recommendations-list-item-right" wx:if="{{row.right}}">
+                        <image src="{{row.right.img}}" mode="widthFix" bindtap="navigateToDetail" data-product-id="{{row.right.id}}"></image>
+                        <text class="recommendations-list-item-left-title" bindtap="navigateToDetail" data-product-id="{{row.right.id}}">{{row.right.name}}</text>
+                        <text class="recommendations-list-item-left-sell">已售{{row.right.sell}}</text>
+                        <view class="recommendations-list-item-left-price">
+                            <text class="recommendations-list-item-left-price-title">￥{{row.right.price}}</text>
+                            <image wx:if="{{row.right.isShowCart}}" 
+                                   class="recommendations-list-item-left-price-image" 
+                                   src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/buycart.png" 
+                                   mode="widthFix"
+                                   bindtap="toggleCartControls"
+                                   data-id="{{row.right.id}}"></image>
+                            <view class="recommendations-list-item-left-count-tips" wx:if="{{row.right.isShowCart}}">
+                              <text>x{{row.right.quantity}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </block>
+        </view>
+        
+        <view class="market-list" wx:if="{{activeTab === 9}}">
+        <view class="market-title">市集</view>
+          <block wx:for="{{marketItems}}" wx:key="id">
+            <view class="market-item">
+              <view class="market-item-icon">
+                <image src="{{item.img}}" mode="widthFix"></image>
+              </view>
+              <view class="market-item-content">
+                <view class="market-item-name">{{item.name}}<image src="https://txtimages.oss-cn-beijing.aliyuncs.com/category/gouwuche.png" mode="widthFix"></image>
+                </view>
+                <view class="market-item-details">
+                  <view class="market-item-price">价格: <text class="highlight">￥{{item.price}}/个</text></view>
+                  <view class="market-item-quantity">数量: {{item.quantity}}个</view>
+                  <view class="market-item-date">日期: {{item.date}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+    </view>
+  </view>
+  <view class="title-content-container-bottom" wx:if="{{jiesuan > 0 ? true : false}}">
+    <view class="title-content-container-bottom-content-left title-content-container-bottom-content-left-image">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/package.png" mode="widthFix"></image>
+      <view class="title-content-container-bottom-content-pre-text">预计到手</view>
+      <view class="title-content-container-bottom-content-price-text">¥{{jiesuan}}</view>
+    </view>
+    <view class="title-content-container-bottom-content-right" bindtap="navigateToCheckout">
+      <text>去结算</text>
+    </view>
+  </view>
+  <view class="title-content-container-bottom" wx:if="{{jiesuan === 0}}">
+    <view class="title-content-container-bottom-content-left">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/package.png" mode="widthFix"></image>
+    <view class="title-content-container-bottom-content-pre-text">还未选择</view>
+    </view>
+    <view class="title-content-container-bottom-content-right" bindtap="navigateToCheckout">
+      去结算
+    </view>
+  </view>
+</scroll-view>
+<custom-tabbar></custom-tabbar>

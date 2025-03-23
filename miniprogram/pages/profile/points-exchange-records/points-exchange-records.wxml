@@ -1,0 +1,31 @@
+<view class="container">
+  <!-- Header -->
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">兑换记录</view>
+  </view> -->
+  
+  <!-- Exchange Records List -->
+    <view class="record-title">
+      <view class="record-title-text">兑换记录</view>
+    </view>
+    <!-- Record Item 1 -->
+    <block wx:for="{{records}}" wx:key="id">
+      <view class="record-item">
+        <view class="record-item-image">
+          <image src="{{item.images || 'https://txtimages.oss-cn-beijing.aliyuncs.com/profile/coupon1.png'}}" mode="aspectFit"></image>
+        </view>
+        <view class="record-left">
+          <view class="record-name">满{{item.min_amount}}-{{item.exchange_amount}}元</view>
+          <view class="record-expired">有效期1个月,不可叠加使用</view>
+          <view class="record-date">{{item.created_at}}至{{item.deadline}}</view>
+        </view>
+        <view class="record-right">
+          <text class="record-status" bindtap="{{item.status == 1 ? '' : 'exchangeItem'}}" data-id="{{item.id}}">{{item.status == 1 ? '已使用' : '立即使用'}}</text>
+        </view>
+      </view>
+    </block>
+
+</view> 

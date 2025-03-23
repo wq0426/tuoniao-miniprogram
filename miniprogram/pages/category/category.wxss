@@ -1,0 +1,654 @@
+page {
+  height: 2000rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollarea {
+  position: relative;
+  height: 2000rpx;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 750rpx;
+  position: relative;
+}
+
+.title {
+    width: 750rpx;
+    height: 115rpx;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.title-left {
+    height: 115rpx;
+    margin-left: 41.67rpx;
+    margin-top: 100.38rpx;
+}
+.title-left image {
+    width: 31.25rpx;
+    height: 31.25rpx;
+}
+
+.title-right {
+    width: 677rpx;
+    height: 115rpx;
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 31rpx;
+    color: #1C1C1C;
+    line-height: 44rpx;
+    text-align: center;
+    font-style: normal;
+    text-transform: none;
+    margin-top: 93.38rpx;
+    margin-right: 31.25rpx;
+}
+
+.title-img, .title-img image {
+  width: 750rpx;
+  height: 313.54rpx;
+}
+
+.title-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 750rpx;
+  position: relative;
+  margin-top: -130.42rpx;
+}
+
+.title-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 187.5rpx;
+  height: 1700rpx;
+  background: #F7F7F2;
+  position: relative;
+  box-shadow: 0rpx -6rpx 6rpx 1rpx rgba(203,203,166,0.24);
+  border-radius: 0rpx 0rpx 0rpx 0rpx;
+}
+
+.title-menu-item {
+  width: 187.5rpx;
+  height: 129.17rpx;
+  padding-top: 35rpx;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1rpx solid #eee;
+    background: #ADC05A;
+    border-radius: 0rpx 31rpx 0rpx 0rpx;
+}
+.title-menu-item text {
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 23rpx;
+    color: #1C1C1C;
+    line-height: 32rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.title-product-item {
+    height: 68.75rpx;
+    display: flex;
+    align-items: center;
+    margin-left: 31.25rpx;
+    margin-top: 10.42rpx;
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 19rpx;
+    color: #7F7F7F;
+    line-height: 26rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.title-menu-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0rpx 31rpx 0rpx 0rpx;
+}
+
+.title-menu-item-product, 
+.title-menu-item-content, 
+.title-menu-item-content-free-end{
+    width: 187.5rpx;
+    height: 93.75rpx;
+    border-radius: 0rpx 31rpx 0rpx 0rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20rpx;
+    z-index: 0;
+    margin-top: -20rpx;
+}
+
+.title-menu-item-content:nth-child(1) {
+    z-index: 1;
+}
+
+.title-menu-item-content:nth-child(2) {
+    z-index: 2;
+}
+
+.title-menu-item-content:nth-child(3) {
+    z-index: 3;
+}   
+
+.title-menu-item-content:nth-child(4) {
+    z-index: 4;
+}
+
+.title-menu-item-content:nth-child(5) {
+    z-index: 5;
+}
+
+.title-menu-item-content:nth-child(6) {
+    z-index: 6;
+}
+
+.title-menu-item-active {
+    background: #ADC05A;
+}
+
+.title-menu-item-product text, .title-menu-item-content text {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 32rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.title-product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 562.5rpx;
+    position: relative;
+}
+
+.recommendations-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    width: 562.5;
+}
+
+.recommendations-list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 562.5;
+    height: 312.75rpx;
+}
+
+.recommendations-list-item-left, 
+.recommendations-list-item-right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    width: 275.75rpx;
+    height: 312.33rpx;
+    position: relative;
+}
+
+.recommendations-list-item-left-price-num{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.recommendations-list-item-left image, .recommendations-list-item-right image {
+    width: 229.75rpx;
+    height: 208.25rpx;
+}
+
+.recommendations-list-item-left-price{
+    width: 220.75rpx;
+    margin-top: 10.42rpx;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.recommendations-list-item-left-price image {
+    width: 18.75rpx;
+    height: 18.75rpx;
+}
+
+.recommendations-list-item-left-price-image, .recommendations-list-item-right-price-image {
+    width: 18.75rpx;
+    height: 18.75rpx;
+    position: absolute;
+    bottom: 0;
+    right: 10rpx;
+}
+
+.recommendations-list-item-left-title {
+    margin-top:10.83rpx;
+    width: 229.75rpx;
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 19rpx;
+    color: #1C1C1C;
+    line-height: 26rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.recommendations-list-item-left-sell {
+    display: flex;
+    align-self: flex-start;
+    width: 229.75rpx;
+    margin-left: 22.38rpx;
+    margin-top: 10.42rpx;
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 13rpx;
+    color: #7F7F7F;
+    line-height: 18rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.recommendations-list-item-left-price-title {
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 19rpx;
+    color: #1C1C1C;
+    line-height: 26rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.title-content-container-bottom {
+    position: fixed;
+    bottom: 170rpx;
+    width: 750rpx;
+    height: 72.92rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-content-container-bottom-content-left {
+    width: 645.83rpx;
+    height: 72.92rpx;
+background: #FFFFFF;
+box-shadow: 0rpx 3rpx 6rpx 1rpx rgba(0,0,0,0.16);
+border-radius: 36rpx 36rpx 36rpx 36rpx;
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title-content-container-bottom-content-right {
+    position: absolute;
+    right: 51rpx;
+    flex: 2;
+    width: 125rpx;
+    height: 73rpx;
+    background: #ADC05A;
+    border-radius: 0rpx 36rpx 36rpx 0rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 23rpx;
+    color: #FFFFFF;
+    line-height: 32rpx;
+    text-align: left;
+    font-style: normal;
+
+    z-index: 9999;
+}
+
+
+.title-content-container-bottom-content-left image {
+    width: 41.67rpx;
+    height: 41.67rpx;
+    margin-left: 22.83rpx;
+}
+
+.title-content-container-bottom-content-pre-text {
+margin-left: 25.25rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 32rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.title-content-container-bottom-content-price-text {
+    margin-left: 11.25rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 27rpx;
+color: #F9AE49;
+line-height: 38rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.title-menu-item-active {
+  color: #ADC05A !important;
+  font-weight: 500 !important;
+  position: relative;
+}
+
+.title-menu-item-active::after {
+  content: "";
+  position: absolute;
+  bottom: -10rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background-color: #ADC05A;
+  border-radius: 2rpx;
+}
+
+/* Add these new styles for the market interface */
+
+.market-banner {
+  position: relative;
+  margin-bottom: 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.market-banner-content-image {
+    width: 560rpx;
+    height: 156.25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.market-banner-content-image image {
+  width: 500rpx;
+  height: 156.25rpx;
+  border-radius: 0;
+}
+
+.egg-banner {
+  width: 500rpx;
+  height: 156.25rpx;
+  border-radius: 0;
+}
+
+.market-stats {
+    width: 560rpx;
+    height: 41rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 52.08rpx;
+  padding: 15rpx 15rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.08);
+}
+
+.market-stats-item {
+    width: 182.5rpx;    
+    height: 41rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+border-radius: 21rpx 21rpx 21rpx 21rpx;
+}
+
+.market-stats-item image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 10rpx;
+}
+
+.market-stats-item text {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 32rpx;
+text-align: right;
+font-style: normal;
+text-transform: none;
+}
+
+.market-stats-item.sold {
+  color: #666;
+  border: 1rpx solid #F9AE49;
+}
+
+.market-stats-item.sold .highlight {
+  color: #F9AE49;
+  font-weight: 500;
+  margin: 0 5rpx;
+}
+
+.market-stats-item.unsold {
+  color: #666;
+  border: 1rpx solid #ADC05A;
+}
+
+.market-stats-item.unsold .highlight {
+  color: #ADC05A;
+  font-weight: 500;
+  margin: 0 5rpx;
+}
+
+.market-title {
+  width: 38rpx;
+height: 19rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 19rpx;
+color: #7F7F7F;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+margin-bottom: 10rpx;
+}
+
+.market-list {
+    width: 510rpx;
+  padding: 0 20rpx;
+}
+
+.market-item {
+    width: 470rpx;
+    height: 104rpx;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 20rpx;
+  background-color: #f9f9f5;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 5rpx rgba(0,0,0,0.05);
+  margin-bottom: 20.83rpx;
+}
+
+.market-item-icon image {
+  width: 62.5rpx;
+  height: 62.5rpx;
+}
+
+.market-item-content {
+  flex: 1;
+  margin-left: 10rpx;
+}
+
+.market-item-name {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 19rpx;
+color: #1C1C1C;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.market-item-name image {
+  width: 19rpx;
+  height: 19rpx;
+  margin-left: 230rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.market-item-details {
+    width: 370rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 17rpx;
+color: #7F7F7F;
+line-height: 23rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+gap: 5rpx;
+}
+
+.highlight {
+  color: #F9AE49;
+  margin-bottom: 5rpx;
+}
+
+.market-item-cart image {
+  width: 19rpx;
+  height: 19rpx;
+}
+
+.market-banner-title {
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 31.25rpx;
+}
+
+.market-banner-title-line {
+    width: 100rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 380rpx;
+}
+
+.market-banner-title-line image {
+    width: 19rpx;
+    height: 19rpx;
+}
+
+.market-banner-title-line text, .market-banner-title text {
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 400;
+    font-size: 19rpx;
+    color: #7F7F7F;
+    line-height: 26rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.title-content-container-item-item-right-price-num{
+    width: 62rpx;
+    height: 20.75rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.title-content-container-item-item-right-price-num image {
+    width: 20.75rpx;
+    height: 20.75rpx;
+}
+
+.title-content-container-item-item-right-price-num text {
+    height: 23rpx;
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 400;
+    font-size: 23rpx;
+    color: #1C1C1C;
+    line-height: 23rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+.recommendations-list-item-left-count-tips {
+  position: absolute;
+  bottom: 8px;
+  right: -8px;
+  width: 15px;
+  height: 10px;
+  border-radius: 9px 9px 9px 9px;
+  background-color: #F9AE49;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommendations-list-item-left-count-tips text {
+  color: #FFFFFF;
+  font-size: 8px;
+  text-align: center;
+  line-height: 8px;
+}

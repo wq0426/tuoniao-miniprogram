@@ -1,0 +1,96 @@
+/* 页面整体样式 */
+.container {
+  position: relative;
+}
+
+.title {
+  width: 750rpx;
+  height: 32rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  top: 84rpx;
+  left: 41rpx;
+}
+
+.title-left, .title-left image {
+  width: 31.25rpx;
+  height: 31.25rpx;
+}
+
+.title-right {
+  margin-left: 230rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 31rpx;
+color: #1C1C1C;
+line-height: 44rpx;
+text-align: center;
+font-style: normal;
+text-transform: none;
+}
+.image-item-head, .image-item-head image {
+  width: 750rpx;
+  height: 600rpx;
+  z-index: 1;
+}
+
+.info-content {
+  width: 748rpx;
+  height: 773rpx;
+  background:#FFFFFF;
+  border-radius: 42rpx 42rpx 0rpx 0rpx;
+  margin-top: -35rpx;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.info-content-title {
+  width: 666rpx;
+  height: 25rpx;
+  background: #FFFFFF;
+  border-radius: 42rpx 42rpx 0rpx 0rpx;
+  margin-top: 41.67rpx;
+
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 25rpx;
+color: #1C1C1C;
+line-height: 35rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.info-content-date {
+  width: 666rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 300;
+font-size: 17rpx;
+color: #7F7F7F;
+line-height: 23rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+  margin-top: 10rpx;
+}
+
+.info-content-description {
+width: 666rpx;
+height: 431rpx;
+margin-top: 31.25rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 300;
+font-size: 19rpx;
+color: #1C1C1C;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}

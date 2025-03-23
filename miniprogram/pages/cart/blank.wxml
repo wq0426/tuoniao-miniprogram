@@ -1,0 +1,32 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <view class="title">
+        <view class="title-left">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home.png" bindtap="navigateToHome" mode="widthFix"></image>
+        </view>
+        <view class="title-right">
+            <text>购物车</text>
+        </view>
+    </view>
+    <view class="title-content-container">
+      <view class="title-content-blank-container-item">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="widthFix"></image>
+            <view class="title-content-blank-container-item-content-text">购物车为空</view>
+            <view class="title-content-blank-container-item-content-text-2">赶紧去逛逛，购买心仪的商品吧~</view>
+            <view class="title-content-blank-container-item-content-text-3">
+              <text>逛一逛</text>
+            </view>
+          </view>
+    </view>
+    <view class="title-content-container-bottom-blank">
+      <view class="title-content-container-bottom-content-left-blank">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/package.png" mode="widthFix"></image>
+        <view class="title-content-container-bottom-content-pre-text-blank">还未选择</view>
+      </view>
+      <view class="title-content-container-bottom-content-right-blank">
+        <text>去结算</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<custom-tabbar></custom-tabbar>

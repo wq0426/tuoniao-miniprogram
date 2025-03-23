@@ -1,0 +1,128 @@
+
+<view class="container">
+  <!-- 游戏配鸟蛋收益 -->
+  <view class="income-section">
+    <block wx:for="{{gameEggIncome}}" wx:key="date">
+    <view class="section-header">
+      <view class="section-title">
+        <text>游戏配鸟蛋收益</text>
+        <view class="section-date-container" bindtap="toggleSection" data-type="game" data-date="{{item.date}}">
+          <text class="section-date">{{item.date}}</text>
+          <image class="arrow-icon" src="{{item.expanded ? '/images/icons/down.png' : '/images/icons/up.png'}}"></image>
+        </view>
+      </view>
+      <view class="section-amount">¥{{item.amount}}</view>
+    </view>
+    
+    <view class="section-details" wx:if="{{item.expanded}}">
+      <block wx:for="{{item.amount_item}}" wx:for-item="it" wx:key="name">
+        <view class="income-item">
+          <view class="income-item-left">
+            <image class="income-icon" src="{{it.image}}" mode="aspectFit"></image>
+            <view class="income-info">
+              <view class="income-title">{{it.name}}</view>
+              <view class="income-date">{{it.date}}</view>
+            </view>
+          </view>
+          <view class="income-amount">¥{{it.amount}}</view>
+        </view>
+      </block>
+    </view>
+    </block>
+  </view>
+  
+  <!-- 商品鸟收益 -->
+  <view class="income-section">
+    <block wx:for="{{productBirdIncome}}" wx:key="date">
+    <view class="section-header">
+      <view class="section-title">
+        <text>商品鸟收益</text>
+        <view class="section-date-container" bindtap="toggleSection" data-type="product" data-date="{{item.date}}">
+          <text class="section-date">{{item.date}}</text>
+          <image class="arrow-icon" src="{{item.expanded ? '/images/icons/down.png' : '/images/icons/up.png'}}"></image>
+        </view>
+      </view>
+      <view class="section-amount">¥{{item.amount}}</view>
+    </view>
+    
+    <view class="section-details" wx:if="{{item.expanded}}">
+      <block wx:for="{{item.amount_item}}" wx:for-item="it" wx:key="name">
+        <view class="income-item">
+          <view class="income-item-left">
+            <image class="income-icon" src="{{it.image}}" mode="aspectFit"></image>
+          <view class="income-info">
+            <view class="income-title">{{it.name}}</view>
+            <view class="income-date">{{it.date}}</view>
+          </view>
+        </view>
+        <view class="income-amount">¥{{it.amount}}</view>
+        </view>
+      </block>
+    </view> 
+    </block>
+  </view>
+  
+  <!-- 种鸟收益 -->
+  <view class="income-section">
+    <block wx:for="{{breedingBirdIncome}}" wx:key="date">
+    <view class="section-header">
+      <view class="section-title">
+        <text>种鸟收益</text>
+        <view class="section-date-container" bindtap="toggleSection" data-type="breeding" data-date="{{item.date}}">
+          <text class="section-date">{{item.date}}</text>
+          <image class="arrow-icon" src="{{item.expanded ? '/images/icons/down.png' : '/images/icons/up.png'}}"></image>
+        </view>
+      </view>
+      <view class="section-amount">¥{{item.amount}}</view>
+    </view>
+    
+    <view class="section-details" wx:if="{{item.expanded}}">
+      <view class="empty-state" wx:if="{{item.amount_item.length === 0}}">
+        <text>暂无收益记录</text>
+      </view>
+      <block wx:for="{{item.amount_item}}" wx:for-item="it" wx:key="name">
+        <view class="income-item">
+          <view class="income-item-left">
+            <image class="income-icon" src="{{it.image}}" mode="aspectFit"></image>
+            <view class="income-info">
+              <view class="income-title">{{it.name}}</view>
+              <view class="income-date">{{it.date}}</view>
+            </view>
+          </view>
+          <view class="income-amount">¥{{it.amount}}</view>
+        </view>
+      </block>
+    </view>
+    </block>
+  </view>
+  
+  <!-- 日期选择弹窗 -->
+  <view class="date-picker-modal {{showDatePickerModal ? 'show' : ''}}">
+    <view class="date-picker-content">
+      <view class="date-picker-body">
+        <!-- 年份垂直滚动选择器 -->
+        <view class="picker-column">
+          <swiper class="date-swiper" vertical="true" bindchange="onYearSwiperChange" current="{{yearIndex}}" circular="true">
+            <swiper-item wx:for="{{yearList}}" wx:key="index" class="swiper-item">
+              <view class="date-display-year">{{item}}</view>
+            </swiper-item>
+          </swiper>
+        </view>
+        
+        <!-- 月份垂直滚动选择器 -->
+        <view class="picker-column">
+          <swiper class="date-swiper" vertical="true" bindchange="onMonthSwiperChange" current="{{monthIndex}}" circular="true">
+            <swiper-item wx:for="{{monthList}}" wx:key="index" class="swiper-item">
+              <view class="date-display-month">{{item}}</view>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>
+      
+      <view class="date-picker-footer">
+        <view class="date-picker-btn cancel" bindtap="cancelDateSelection">取消</view>
+        <view class="date-picker-btn confirm" bindtap="confirmDateSelection">确定</view>
+      </view>
+    </view>
+  </view>
+</view> 

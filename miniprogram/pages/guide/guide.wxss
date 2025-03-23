@@ -1,0 +1,42 @@
+/* guide.wxss */
+.guide-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.guide-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 83.33rpx;
+  width: 583rpx;
+  height: 94rpx;
+  position: absolute;
+  bottom: 150rpx;
+  background: #F9AE49;
+  box-shadow: 0rpx 6rpx 6rpx 1rpx rgba(178,124,0,0.16);
+  border-radius: 52rpx 52rpx 52rpx 52rpx;
+
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  letter-spacing: 2rpx;
+  font-size: 31.25rpx;
+  color: #FFFFFF;
+  line-height: 44rpx;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  border: none;
+}

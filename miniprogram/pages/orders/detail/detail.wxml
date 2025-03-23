@@ -1,0 +1,117 @@
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="/images/icons/back.png" mode="aspectFit"></image>
+    </view>
+    <view class="title">交易成功</view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text>加载中...</text>
+  </view>
+
+  <block wx:if="{{!loading && order}}">
+    <!-- 收货信息 -->
+    <view class="delivery-info">
+      <view class="qianshou-image">
+        <image src="/images/icons/qianshou.png" mode="aspectFit"></image>
+      </view>
+      <view class="status-tag">已签收</view>
+      <view class="line"></view>
+      <view class="address-info">
+        <text class="name-phone">{{order.address.receiver_name}} {{order.address.receiver_phone}}</text>
+        <text class="address">{{order.address.province }} {{order.address.city }} {{order.address.district }} {{order.address.detail_address}}</text>
+      </view>
+      <view class="expand-icon">
+        <image src="/images/icons/expand.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <!-- 店铺信息 -->
+    <view class="store-info">
+      <view class="store-name">
+        <image class="store-icon" src="{{order.store_logo}}" mode="aspectFit"></image>
+        <text>{{order.store_name}}</text>
+        <image class="arrow-icon" src="/images/icons/right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <!-- 商品信息 -->
+    <view class="products-container">
+      <view class="product-item" wx:for="{{order.products}}" wx:key="product_id">
+        <image class="product-image" src="{{item.header_img}}" mode="aspectFill"></image>
+        <view class="product-info">
+          <view class="product-name">{{item.product_name}}</view>
+          <view class="product-price">¥{{item.product_current_price}}</view>
+        </view>
+        <view class="product-quantity">共{{item.product_quantity}}件</view>
+      </view>
+    </view>
+
+    <!-- 订单金额信息 -->
+    <view class="order-summary">
+      <view class="summary-item">
+        <text>商品金额</text>
+        <text>¥{{order.total_price}}</text>
+      </view>
+      <view class="summary-item">
+        <text>运费</text>
+        <text>¥{{order.shipping_fee}}</text>
+      </view>
+      <view class="summary-item">
+        <text>会员折扣</text>
+        <text>-¥{{order.member_discount}}</text>
+      </view>
+      <view class="summary-total">
+        <text>实付款</text>
+        <text class="total-amount">¥{{order.order_amount}}</text>
+      </view>
+    </view>
+
+    <!-- 订单编号信息 -->
+    <view class="order-info" wx:if="{{expanded}}">
+      <view class="info-item">
+        <text class="info-label">订单编号</text>
+        <view class="info-value-copy">
+          <text>{{order.order_no}}</text>
+          <text class="copy-btn" bindtap="copyText" data-text="{{order.order_no}}">复制</text>
+        </view>
+      </view>
+      <view class="info-item">
+        <text class="info-label">收货信息</text>
+        <text class="info-value">{{order.address.receiver_name}}，{{order.address.receiver_phone}}，{{order.address.province }} {{order.address.city }} {{order.address.district }} {{order.address.detail_address}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">微信交易号</text>
+        <text class="info-value">{{order.transaction_id || '暂无'}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">创建时间</text>
+        <text class="info-value">{{order.created_at}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">付款时间</text>
+        <text class="info-value">{{order.pay_time || '暂无'}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">发货时间</text>
+        <text class="info-value">{{order.shipped_at || '暂无'}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">成交时间</text>
+        <text class="info-value">{{order.completed_at || '暂无'}}</text>
+      </view>
+    </view>
+
+    <!-- 收起/展开更多订单信息 -->
+    <view class="collapse-info">
+      <view class="collapse-text" bindtap="toggleMoreInfo">
+        <text>{{expanded ? '收起更多订单信息' : '查看更多订单信息'}}</text>
+        <image src="{{expanded ? '/images/icons/up.png' : '/images/icons/down.png'}}" mode="aspectFit"></image>
+      </view>
+    </view>
+  </block>
+</view> 

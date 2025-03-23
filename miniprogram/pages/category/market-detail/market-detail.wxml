@@ -1,0 +1,101 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <view class="title">
+      <view class="title-left" bindtap="navigateBack">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+      </view>
+      <view class="title-right">
+        <text></text>
+      </view>
+    </view>
+
+    <!-- Sold Section -->
+    <view class="section-header sold">
+      <text>已售</text>
+    </view>
+    
+    <block wx:for="{{soldItems}}" wx:key="id">
+      <view class="market-item">
+        <view class="market-item-icon">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view class="market-item-content">
+          <view class="market-item-details">
+            <view class="market-item-price">价格: <text class="highlight-orange">{{item.price}}/个</text></view>
+            <view class="market-item-quantity">数量: {{item.quantity}}个</view>
+            <view class="market-item-date">日期: {{item.date}}</view>
+          </view>
+        </view>
+        <view class="market-item-total">
+          <text class="total-price-orange">¥{{item.totalPrice}}</text>
+        </view>
+      </view>
+    </block>
+
+    <!-- Unsold Section -->
+    <view class="section-header unsold">
+      <text>未售</text>
+    </view>
+    
+    <block wx:for="{{unsoldItems}}" wx:key="id">
+      <view class="market-item">
+        <view class="market-item-icon">
+          <image src="{{item.img}}" mode="widthFix"></image>
+        </view>
+        <view class="market-item-content">
+          <view class="market-item-details">
+            <view class="market-item-price">价格: <text class="highlight-green">{{item.price}}/个</text></view>
+            <view class="market-item-quantity">数量: {{item.quantity}}个</view>
+            <view class="market-item-date">日期: {{item.date}}</view>
+          </view>
+        </view>
+        <view class="market-item-actions">
+          <button class="modify-price-btn" bindtap="modifyPrice" data-id="{{item.id}}">修改价格</button>
+          <button class="recycle-btn" bindtap="recycleItem" data-id="{{item.id}}">回收</button>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- Recycle Options Popup -->
+  <view class="popup-overlay" wx:if="{{showRecyclePopup}}" bindtap="closeRecyclePopup"></view>
+  <view class="recycle-popup" wx:if="{{showRecyclePopup}}">
+    <button class="sell-to-platform-btn" bindtap="sellToPlatform">卖出给平台</button>
+    <button class="send-back-to-self-btn" bindtap="sendBackToSelf">寄回给自己</button>
+  </view>
+  
+  <!-- Success Modal -->
+  <view class="success-modal-overlay" wx:if="{{showSuccessModal}}" bindtap="closeSuccessModal">
+    <view class="success-modal" catchtap="preventBubble">
+      <view class="success-title">回收成功</view>
+      <view class="success-subtitle">(平台将在1-3日内打款)</view>
+    </view>
+  </view>
+  
+  <!-- 修改价格弹窗 -->
+  <view class="price-modal-overlay" wx:if="{{showPriceModal}}" bindtap="closePriceModal"></view>
+  <view class="price-modal {{showPriceModal ? 'price-modal-show' : ''}}" wx:if="{{showPriceModal}}">
+    <view class="price-modal-header">修改价格</view>
+    
+    <view class="price-input-container">
+      <text class="price-symbol">¥</text>
+      <input 
+        class="price-input" 
+        type="digit" 
+        value="{{newPrice}}" 
+        bindinput="onPriceInput"
+        focus="{{showPriceModal}}"
+      />
+    </view>
+    
+    <view class="price-modal-footer">
+      <view class="price-modal-buttons">
+        <button class="price-modal-cancel" bindtap="closePriceModal">取消</button>
+        <button class="price-modal-confirm" bindtap="confirmPrice">确定</button>
+      </view>
+      <view class="price-modal-limit">单颗鸵鸟蛋定价不可超过300元/颗</view>
+    </view>
+  </view>
+  
+  <custom-tabbar></custom-tabbar>
+</scroll-view> 

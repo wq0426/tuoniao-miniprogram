@@ -1,0 +1,66 @@
+<view class="container">
+  <!-- 表单内容区域 -->
+  <view class="form-container">
+    <!-- 收货人 -->
+    <view class="form-item">
+      <view class="form-label">收货人</view>
+      <input type="text" class="form-input" placeholder="请填写收货人姓名" value="{{addressData.name}}" bindinput="onNameInput" />
+    </view>
+    
+    <!-- 手机号码 -->
+    <view class="form-item">
+      <view class="form-label">手机号码</view>
+      <input type="number" class="form-input" placeholder="请填写11位手机号码" maxlength="11" value="{{addressData.phone}}" bindinput="onPhoneInput" />
+    </view>
+    
+    <!-- 选择地区 -->
+    <view class="form-item" bindtap="openRegionPicker">
+      <view class="form-label">选择地区</view>
+      <view class="form-input {{addressData ? 'placeholder' : ''}}">
+        <text wx:if="{{addressData}}">{{addressData.province}} {{addressData.city}} {{addressData.district}}</text>
+        <text wx:else>请选择地址</text>
+      </view>
+      <image class="arrow-icon" src="/images/icons/arrow-right.png"></image>
+    </view>
+    
+    <!-- 详细地址 -->
+    <view class="form-item">
+      <view class="form-label">详细地址</view>
+      <textarea class="form-textarea" placeholder="请填写街道、楼牌号等" value="{{addressData.detail}}" bindinput="onDetailInput" maxlength="100" auto-height></textarea>
+    </view>
+    
+    <!-- 设为默认地址 -->
+    <view class="form-item default-address">
+      <view class="form-label-container">
+        <view class="form-label-circle {{addressData.isDefault ? 'active' : ''}}" bindtap="toggleDefaultAddress"></view>
+        <view class="form-label">设为默认地址</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 底部保存按钮 -->
+  <view class="save-btn" bindtap="saveAddress">保存</view>
+</view>
+
+<!-- 地区选择器 -->
+<view class="region-picker-modal {{showRegionPicker ? 'show' : ''}}">
+  <view class="region-picker-mask" bindtap="closeRegionPicker"></view>
+  <view class="region-picker-content">
+    <view class="region-picker-header">
+      <view class="region-picker-cancel" bindtap="closeRegionPicker">取消</view>
+      <view class="region-picker-title">选择地区</view>
+      <view class="region-picker-confirm" bindtap="confirmRegion">确定</view>
+    </view>
+    <picker-view class="region-picker-view" value="{{regionValue}}" bindchange="onRegionChange">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="index" class="picker-view-item">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{cities}}" wx:key="index" class="picker-view-item">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{districts}}" wx:key="index" class="picker-view-item">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view> 

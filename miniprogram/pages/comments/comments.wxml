@@ -1,0 +1,65 @@
+<view class="container">
+  <!-- 评价统计 -->
+  <!-- <view class="stats-container">
+    <view class="stats-item">
+      <view class="stats-value">100%</view>
+      <view class="stats-label">好评率</view>
+    </view>
+    <view class="stats-item">
+      <view class="stats-value">2</view>
+      <view class="stats-label">全部评价</view>
+    </view>
+    <view class="stats-item">
+      <view class="stats-value">2</view>
+      <view class="stats-label">有图评价</view>
+    </view>
+  </view> -->
+  
+  <!-- 评价列表 -->
+  <view class="reviews-list"> 
+    <view class="review-item" wx:for="{{reviews}}" wx:key="id">
+      <view class="user-info">
+        <image class="user-avatar" src="{{item.user_avatar}}" mode="aspectFill"></image>
+        <view class="user-details">
+          <view class="user-name">{{item.user_name}}</view>
+          <view class="review-date">{{item.created_at}}</view>
+        </view>
+        <!-- <view class="reviewer-label">{{item.status_text}}</view> -->
+      </view>
+      
+      <view class="review-content" bindtap="navigateToReviewDetail" data-review-id="{{item.id}}" data-product-id="{{productId}}">
+        {{item.review_content || "暂无评价内容"}}
+      </view>
+      
+      <view class="review-images" wx:if="{{item.review_images}}" bindtap="navigateToReviewDetail" data-review-id="{{item.id}}" data-product-id="{{productId}}">
+        <image 
+          class="review-image" 
+          wx:for="{{item.review_images}}" 
+          wx:for-item="image"
+          wx:for-index="imageIndex"
+          wx:key="imageIndex" 
+          src="{{image}}" 
+          mode="aspectFill"
+          bindtap="previewImage"
+          data-index="{{imageIndex}}"
+          data-review-index="{{index}}"
+        ></image>
+      </view>
+      
+      <view class="review-actions">
+        <view class="action-item">
+          <image src="/images/icons/views.png" mode="aspectFit"></image>
+          <text>{{item.view_nums || 0}}</text>
+        </view>
+        <view class="action-item">
+          <image src="/images/icons/comments.png" mode="aspectFit"></image>
+          <text>{{item.evaluate_nums || 0}}</text>
+        </view>
+        <view class="action-item" bindtap="raiseReview" data-review-id="{{item.id}}" data-product-id="{{productId}}">
+          <image src="/images/icons/praise.png" mode="aspectFit"></image>
+          <text>{{item.praise_nums || 0}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

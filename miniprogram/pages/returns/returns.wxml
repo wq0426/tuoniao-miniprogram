@@ -1,0 +1,81 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-container">
+    <view class="search-box">
+      <image class="search-icon" src="/images/icons/search.png" mode="aspectFit"></image>
+      <input class="search-input" type="text" placeholder="搜索" bindinput="onSearchInput" confirm-type="search" value="{{searchKeyword}}"/>
+    </view>
+    <text class="search-button" bindtap="onSearch">筛选</text>
+  </view>
+  
+  <!-- 标签栏 -->
+  <view class="tabs-container">
+    <view 
+      class="tab-item {{currentTab === index ? 'active' : ''}}" 
+      wx:for="{{tabs}}" 
+      wx:key="index" 
+      bindtap="switchTab" 
+      data-index="{{index}}"
+    >
+      <text>{{item}}</text>
+      <view class="tab-line" wx:if="{{currentTab === index}}"></view>
+    </view>
+  </view>
+  
+  <!-- 退换货列表 -->
+  <view class="returns-list" wx:if="{{returns.length > 0}}">
+    <view class="return-item" wx:for="{{returns}}" wx:key="id">
+      <!-- 商店信息 -->
+      <view class="store-info">
+        <view class="store-name">
+          <image class="store-icon" src="{{item.store_icon}}" mode="aspectFit"></image>
+          <text>{{item.store_name}}</text>
+        </view>
+        <text class="return-status">{{item.status_text}}</text>
+      </view>
+      
+      <!-- 商品信息 -->
+      <view class="product-info" bindtap="navigateToReturnDetail" data-id="{{item.id}}">
+        <image class="product-image" src="{{item.header_img}}" mode="aspectFill"></image>
+        <view class="product-details">
+          <view class="product-name">{{item.product_name}}</view>
+          <view class="product-price-count">
+            <view class="product-price">¥{{item.price}}</view>
+            <view class="product-count">共{{item.quantity}}件</view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 操作按钮 -->
+      <view class="action-buttons">
+        <!-- 进行中状态按钮 -->
+        <block wx:if="{{item.status == 0}}">
+          <view class="action-button secondary" bindtap="viewDetails" data-id="{{item.id}}">查看详情</view>
+          <view class="action-button revert" bindtap="cancelReturn" data-id="{{item.id}}">撤消申请</view>
+        </block>
+        <!-- 已完成状态按钮 -->
+        <block wx:if="{{item.status === 1}}">
+          <view class="action-button delete" bindtap="deleteReturn" data-id="{{item.id}}">删除记录</view>
+          <view class="action-button secondary" bindtap="viewDetails" data-id="{{item.id}}">查看详情</view>
+        </block>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{returns.length === 0}}">
+    <image class="empty-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/coupon-blank.png" mode="aspectFit"></image>
+    <text>暂无退换货记录</text>
+  </view>
+  
+  <!-- 撤销申请确认弹窗 -->
+  <view class="confirm-modal {{showCancelConfirm ? 'show' : ''}}" bindtap="closeModal">
+    <view class="modal-content" catchtap="stopPropagation">
+      <view class="modal-title">是否确认撤销申请</view>
+      <view class="modal-buttons">
+        <view class="modal-button cancel" bindtap="closeModal">取消</view>
+        <view class="modal-button confirm" bindtap="confirmCancel">确定</view>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,464 @@
+/* 页面整体样式 */
+.container {
+  padding: 20rpx;
+  background-color: #ffffff;
+}
+
+.image-background {
+  width: 750rpx;
+  height: 422rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  width: 750rpx;
+  height: 56rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.title-left {
+  width: 56rpx;
+  height: 56rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 20rpx;
+}
+
+.title-left image {
+  width: 18rpx;
+  height: 18rpx;
+}
+
+.title-right image {
+  width: 12rpx;
+  height: 12rpx;
+  margin-left: 10rpx;
+}
+
+.title-right {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 18rpx;
+  color: #1C1C1C;
+  line-height: 25rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -56rpx;
+}
+
+.title-select {
+  width: 100rpx;
+  height: 176rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 50wh;
+  top: 45rpx;
+background: #F7F7F2;
+border-radius: 6rpx 6rpx 6rpx 6rpx;
+}
+
+.title-select-item {
+  width: 100rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-select-item text {
+  font-size: 16rpx;
+}
+
+.title-select-item.selected {
+  background: #ADC05A !important;
+  border-radius: 6rpx 6rpx 6rpx 6rpx !important;
+  color: #ffffff;
+}
+
+.image-content-voice {
+  width: 29.3rpx;
+  height: 118.3rpx;
+  position: absolute;
+  left: 52.3rpx;
+  top: 261.3rpx;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.image-content-voice-handle{
+  width: 29.3rpx;
+  height: 29.3rpx;
+  border-radius: 50%;
+  background: #F7F7F2;
+  box-shadow: 0rpx 0rpx 6rpx 1rpx rgba(0,0,0,0.2);
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.image-content-voice image {
+  width: 18.3rpx;
+  height: 18.3rpx;
+}
+
+.voice-handle{
+  width: 6rpx;
+  height: 88.3rpx;
+  background: #F7F7F2;
+border-radius: 3rpx 3rpx 3rpx 3rpx;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
+}
+
+.voice-handle-item{
+  width: 6rpx;
+  height: 44.3rpx;
+background: linear-gradient( 180deg, #ADC05A 0%, #5A8D54 100%);
+border-radius: 3rpx 3rpx 3rpx 3rpx;
+}
+
+.voice-handle-point{
+  width: 11.72rpx;
+  height: 11.72rpx;
+  background: #F7F7F2;
+  border-radius: 50%;
+}
+
+.image-content-scale{
+  width: 310rpx;
+  height:11.72rpx;
+  display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+position: absolute;
+  left: 185.3rpx;
+  top: 360.3rpx;
+}
+
+.image-content-scale-item-point1{
+  width: 11.72rpx;
+  height: 11.72rpx;
+background: #ADC05A;
+  border-radius: 50%;
+  margin-left: -5rpx;
+}
+
+.image-content-scale-item-bar{
+  width: 310rpx;
+  height:4.72rpx;
+  background: #F7F7F2;
+  border-radius: 3rpx 3rpx 3rpx 3rpx;
+}
+
+.image-content-scale-item-point3{
+  width: 11.72rpx;
+  height: 11.72rpx;
+background: #F7F7F2;
+  border-radius: 50%;
+}
+
+.image-content-scale-items-value{
+  width: 139.72rpx;
+  height: 4.72rpx;
+background: #ADC05A;
+  position: absolute;
+}
+
+.image-content-scale-items-value-point{
+  width: 11.72rpx;
+  height: 11.72rpx;
+background: #F7F7F2;
+  border-radius: 50%;
+  margin-left: 15rpx;
+  position: absolute;
+  left: 120.3rpx;
+}
+
+.image-content-direction{
+  width: 93.75rpx;
+  height: 93.75rpx;
+  background: #F7F7F2;
+  border-radius: 50%;
+  position: absolute;
+  left: 609.25rpx;
+  top: 280.3rpx;
+  opacity: 0.7;
+}
+.image-content-direction image{
+  width: 93.75rpx;
+  height: 93.75rpx;
+}
+
+/* 横屏容器 */
+.landscape-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* 全屏背景 */
+.fullscreen-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* 头部导航 */
+.header {
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  right: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.back-btn {
+  width: 60rpx;
+  height: 60rpx;
+  background-color: transparent; 
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-btn image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.camera-selector {
+  width: 150px;
+  height: 30px;
+  position: relative;
+  background-color: rgba(247, 247, 242, 0.5);
+  border-radius: 30rpx;
+  margin-right: 40%;
+  margin-top: -40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-selector text {
+  font-size: 18rpx;
+  color: #1C1C1C;
+  margin-right: 10rpx;
+}
+
+.camera-selector image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-bottom: 5rpx;
+}
+
+/* 下拉菜单 */
+.dropdown-menu {
+  position: absolute;
+  top: 40rpx;
+  left: 0;
+  background-color: rgba(247, 247, 242, 0.9);
+  border-radius: 12rpx;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.menu-item {
+  text-align: center;
+  font-size: 16rpx;
+  padding: 5rpx 0;
+}
+
+.menu-item.selected {
+  background-color: #ADC05A;
+  color: #FFFFFF;
+}
+
+/* 音量控制 */
+.volume-control {
+  position: absolute;
+  left: 40rpx;
+  top: 60%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 10;
+}
+
+.volume-slider {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.volume-track {
+  width: 10px;
+  height: 150px;
+  background-color: rgba(247, 247, 242, 0.6);
+  border-radius: 3rpx;
+  position: relative;
+}
+
+.volume-level {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, #ADC05A 0%, #5A8D54 100%);
+  border-radius: 3rpx;
+}
+
+.volume-handle {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, 0.3);
+}
+
+.volume-button {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(247, 247, 242, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.volume-button image {
+  width: 30px;
+  height: 30px;
+}
+
+/* 缩放控制 */
+.zoom-control {
+  position: absolute;
+  bottom: 70rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  z-index: 10;
+}
+
+.zoom-track {
+  width: 80%;
+  height: 8rpx;
+  background-color: rgba(247, 247, 242, 0.6);
+  border-radius: 4rpx;
+  position: relative;
+}
+
+.zoom-level {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  background-color: #ADC05A;
+  border-radius: 4rpx;
+}
+
+.zoom-handle, .zoom-start, .zoom-end {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 24rpx;
+  height: 24rpx;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  top: 50%;
+  box-shadow: 0 0 5rpx rgba(0, 0, 0, 0.3);
+}
+
+.zoom-start {
+  background-color: #ADC05A;
+  left: 0;
+  z-index: 10;
+}
+
+.zoom-handle {
+  left: 40%;
+}
+
+.zoom-end {
+  left: 100%;
+}
+
+/* 方向控制 */
+.direction-control {
+  position: absolute;
+  right: 50px;
+  bottom: -30px;
+  transform: translateY(-30%);
+  width: 160px;
+  height: 160px;
+  background-color: rgba(247, 247, 242, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.direction-control image {
+  width: 80%;
+  height: 80%;
+}
+
+/* 全屏按钮 */
+.fullscreen-button {
+  position: absolute;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
+  background-color: rgba(247, 247, 242, 0.6);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.fullscreen-button image {
+  width: 30rpx;
+  height: 30rpx;
+}

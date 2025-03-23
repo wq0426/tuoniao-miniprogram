@@ -1,0 +1,29 @@
+<view class="auth-container">
+  <image class="auth-image" src="https://txtimages.oss-cn-beijing.aliyuncs.com/auth.jpg"></image>
+  <!-- <view class="auth-back-container">
+    <image class="auth-back-button" src="{{backButtonSrc}}" bindtap="onBackButtonTap" bindtouchstart="onBackButtonHover" bindtouchend="onBackButtonLeave" mode="widthFix"></image>
+  </view> -->
+  <view class="auth-btn-container">
+    <view class="wechat-login" bindtap="{{isLogging ? '' : 'loginWithWechat'}}">
+      <text class="wechat-login-text {{isLogging ? 'wechat-login-text-disabled' : ''}}">微信一键登录</text>
+    </view>
+    <view class="phone-login {{!termsAccepted ? 'disabled' : ''}}" bindtap="navigateToLogin">
+      <text class="phone-login-text">手机号登录</text>
+    </view>
+    <view class="tips-container">
+      <view class="tips-circle" bindtap="onTipsCircleTap">
+        <view class="tips-circle-image-container">
+          <image class="tips-circle-image" src="{{circleImageSrc}}" mode="widthFix"></image>
+          <image class="tips-circle-image tips-circle-image-overlay" src="{{circleGouImageSrc}}" mode="widthFix"></image>
+        </view>
+      </view>
+      <view class="tips-text">
+        我已阅读
+        <view class="tips-link">用户协议</view>
+        和
+        <view class="tips-link">隐私政策</view>
+        并理解相关条款内容
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,95 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-indicator"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 错误状态 -->
+  <view class="error-container" wx:elif="{{error}}">
+    <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="aspectFit"></image>
+    <text class="error-text">{{errorMessage}}</text>
+    <button class="retry-button" bindtap="retryFetch">重试</button>
+  </view>
+  
+  <!-- 内容状态 -->
+  <view class="content-container" wx:else>
+    <!-- 搜索栏 -->
+    <view class="image-gallery">
+      <view class="image-item-search">
+        <view class="image-item-search-text">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/news/search.png" mode="aspectFill"></image>
+          <view class="image-item-search-text-input">
+            <input type="text" placeholder="搜索" confirm-type="search" bindconfirm="onSearchConfirm" />
+          </view>
+        </view>
+        <view class="image-item-search-image">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/news/notice.png" mode="aspectFill"></image>
+        </view>
+      </view>
+      
+      <!-- 头部展示区 -->
+      <view class="search-content">
+        <view class="search-content-title">
+          <text>多美介绍</text>
+        </view>
+        <view class="search-content-title-image">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/banner/banner1.png" mode="aspectFill"></image>
+        </view>
+        
+        <!-- 标签筛选区 -->
+        <view class="search-content-tags">
+          <view 
+            wx:for="{{newsTypes}}" 
+            wx:key="type"
+            class="search-content-tags-item-{{item.type}} type-{{item.type}} {{activeType === item.type ? 'active' : ''}}"
+            bindtap="handleTagTap"
+            data-type="{{item.type}}"
+            hover-class="tag-hover"
+          >
+            <text>{{item.title}}</text>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 新闻列表 -->
+      <view class="search-content-list">
+        <block wx:if="{{currentNewsList.length > 0}}">
+          <view 
+            class="search-content-list-item" 
+            wx:for="{{currentNewsList}}" 
+            wx:key="id"
+          >
+            <view class="search-content-list-item-title-left">
+              <image src="{{item.img}}" mode="aspectFill"></image>
+            </view>
+            <view class="search-content-list-item-title-right">
+              <view class="search-content-list-item-title-right-title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="search-content-list-item-title-right-content">
+                <text>{{item.content}}</text>
+              </view>
+              <view class="search-content-list-item-title-right-date">
+                <text>{{item.date}}</text>
+                <view 
+                  class="search-content-list-item-title-right-button" 
+                  bindtap="navigateToDetail" 
+                  data-item="{{item}}"
+                >
+                  <text>查看全文</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        
+        <!-- 无数据提示 -->
+        <view class="no-data" wx:if="{{currentNewsList.length === 0}}">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="aspectFit"></image>
+          <text>暂无相关新闻</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

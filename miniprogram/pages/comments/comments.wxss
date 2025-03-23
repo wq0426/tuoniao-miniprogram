@@ -1,0 +1,138 @@
+page {
+  background-color: #F7F7F2;
+}
+
+.container {
+}
+
+/* 评价统计样式 */
+.stats-container {
+  display: flex;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 30rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.stats-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.stats-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1rpx;
+  background-color: #EFEFEF;
+}
+
+.stats-value {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 8rpx;
+}
+
+.stats-label {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 评价列表样式 */
+.reviews-list {
+  margin-top: 20rpx;
+}
+
+.review-item {
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.user-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 6rpx;
+}
+
+.review-date {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.reviewer-label {
+  padding: 4rpx 12rpx;
+  background-color: #F2F7E8;
+  color: #8BB96E;
+  font-size: 22rpx;
+  border-radius: 20rpx;
+}
+
+.review-content {
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 20rpx;
+}
+
+.review-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.review-image {
+  width: 210rpx;
+  height: 210rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 8rpx;
+  background-color: #F5F5F5;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+.action-item image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 8rpx;
+}
+
+.action-item text {
+  font-size: 24rpx;
+  color: #999999;
+} 

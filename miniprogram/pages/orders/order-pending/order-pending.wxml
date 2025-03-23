@@ -1,0 +1,32 @@
+<view class="container">
+  <!-- 商店信息栏 -->
+  <view class="store-header">
+    <view class="store-info">
+      <image class="store-icon" src="/images/icons/dianpu.png" mode="aspectFit"></image>
+      <text class="store-name">鸵小妥</text>
+      <text class="store-arrow">></text>
+    </view>
+    <view class="status-container">
+      <view class="status-text">等待付款</view>
+      <view class="time-remaining">{{countdownMin}}分钟</view>
+    </view>
+  </view>
+  
+  <!-- 商品信息 -->
+  <view class="product-container">
+    <image class="product-image" src="{{orderInfo.productImage}}" mode="aspectFill"></image>
+    <view class="product-info">
+      <view class="product-name">{{orderInfo.productName}}</view>
+      <view class="product-details">
+        <text class="product-price">¥ {{orderInfo.price}}</text>
+        <text class="product-quantity">共{{orderInfo.quantity}}件</text>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 底部操作栏 -->
+  <view class="action-container">
+    <button class="cancel-button" bindtap="cancelOrder">取消订单</button>
+    <button class="pay-button" bindtap="goToPay">去支付</button>
+  </view>
+</view> 

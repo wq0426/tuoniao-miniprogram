@@ -1,0 +1,78 @@
+<view class="container">
+  <!-- 白色卡片区域 -->
+  <view class="withdraw-card">
+    <!-- 提现方式 -->
+    <view class="method-row" bindtap="openMethodSelector">
+      <view class="row-label">提现方式</view>
+      <view class="method-content">
+        <view class="wechat-pay">
+          <image class="wechat-icon" src="{{withdrawMethod.icon}}" mode="aspectFit"></image>
+          <text>{{withdrawMethod.name}}</text>
+        </view>
+        <view class="right-arrow">
+          <image src="/images/icons/right.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 提现金额 -->
+    <view class="amount-row">
+      <view class="row-label">提现金额</view>
+      <view class="min-amount">最少提现金额0.01元</view>
+    </view>
+    
+    <!-- 金额输入 -->
+    <view class="amount-input-container">
+      <text class="currency-symbol">¥</text>
+      <input 
+        class="amount-input" 
+        type="digit" 
+        bindinput="onAmountInput" 
+        value="{{amount}}" 
+        placeholder=""
+        focus="true"
+      />
+    </view>
+  </view>
+  
+  <!-- 余额信息 -->
+  <view class="balance-info">
+    <text>总余额¥{{balance}}</text>
+    <text>提现到{{withdrawMethod.name}}，每日最多可提现<text class="highlight-amount">5000</text>元</text>
+  </view>
+  
+  <!-- 提现按钮 -->
+  <view class="withdraw-button" bindtap="handleWithdraw">提现</view>
+  
+  <!-- 提现方式选择器弹窗 -->
+  <view class="method-selector-mask" wx:if="{{showMethodSelector}}" bindtap="closeMethodSelector"></view>
+  <view class="method-selector-container {{showMethodSelector ? 'show' : ''}}">
+    <view class="method-selector-header">
+      <text class="method-selector-title">请选择提现方式</text>
+      <view class="method-selector-close" bindtap="closeMethodSelector">
+        <image src="/images/icons/close.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    
+    <view class="method-selector-list">
+      <view 
+        class="method-selector-item" 
+        wx:for="{{withdrawMethods}}" 
+        wx:for-item="method" 
+        wx:key="id"
+        bindtap="selectWithdrawMethod"
+        data-id="{{method.id}}"
+      >
+        <view class="method-icon-name">
+          <view class="method-selector-icon">
+            <image src="{{method.icon}}" mode="aspectFit"></image>
+          </view>
+          <text class="method-selector-name">{{method.name}}</text>
+        </view>
+        <view class="method-selector-check {{withdrawMethod.id === method.id ? 'selected' : ''}}">
+            <image wx:if="{{withdrawMethod.id === method.id}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

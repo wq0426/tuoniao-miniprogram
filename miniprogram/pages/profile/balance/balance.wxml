@@ -1,0 +1,50 @@
+<view class="container">
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">余额</view>
+  </view> -->
+  
+  <!-- Balance Display -->
+  <view class="balance-display">
+    <view class="balance-label">当前余额</view>
+    <view class="balance-amount-container">
+      <view class="balance-amount-symbol">¥</view>
+      <view class="balance-amount">{{balance}}</view>
+    </view>
+  </view>
+  
+  <!-- Action Buttons -->
+  <view class="action-buttons">
+    <view class="action-button" bindtap="handleRecharge">
+      <view class="action-icon">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/topup.png" mode="widthFix"></image>
+      </view>
+      <view class="action-text">充值</view>
+    </view>
+    <view class="divider"></view>
+    <view class="action-button" bindtap="handleWithdraw">
+      <view class="action-icon">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/withdraw.png" mode="widthFix"></image>
+      </view>
+      <view class="action-text">提现</view>
+    </view>
+  </view>
+  
+  <!-- Options List -->
+  <view class="options-list">
+    <view class="option-item" bindtap="navigateToBalanceDetails">
+      <view class="option-text">余额明细</view>
+      <view class="option-arrow">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="option-item" bindtap="navigateToWithdrawalRecords">
+      <view class="option-text">提现记录</view>
+      <view class="option-arrow">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view> 

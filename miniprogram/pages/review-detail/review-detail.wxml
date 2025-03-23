@@ -1,0 +1,85 @@
+<view class="container">
+  <!-- 商品图片 -->
+  <image class="product-image" src="{{reviewDetail.product_image}}" mode="aspectFill"></image>
+  
+  <!-- 商品信息 -->
+  <view class="product-info">
+    <view class="product-info-left">
+      <image class="product-thumbnail" src="{{reviewDetail.product_image}}" mode="aspectFill"></image>
+      <view class="product-details">
+        <view class="product-name">{{reviewDetail.product_name}}</view>
+        <view class="quantity-date">
+          <view class="product-quantity">数量：共{{reviewDetail.quantity}}件</view>
+          <view class="product-date">{{reviewDetail.created_at}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 评论区 -->
+  <view class="comments-section">
+    <view class="comment-count">{{reviewDetail.comment_nums}}条评论</view>
+    
+    <!-- 评论列表 - 只显示顶级评论，并在下方显示其回复 -->
+    <block wx:for="{{reviewDetail.evaluate_list}}" wx:key="ID" wx:if="{{item.parent_id == 0}}">
+      <view class="comment-item">
+        <view class="comment-user-info">
+          <image class="comment-avatar" src="{{item.avatar.length > 0 ? item.avatar : '/images/icons/default.png'}}" mode="aspectFill"></image>
+          <view class="comment-details">
+            <view class="comment-user-name">{{item.nickname}}</view>
+            <view class="comment-content">{{item.content}}</view>
+            <view class="date-reply">
+              <view class="comment-date">{{item.created_at_str}}</view>
+              <view class="comment-reply-button" bindtap="showReplyInput" data-comment-id="{{item.ID}}" data-user-name="{{item.nickname}}">回复</view>
+            </view>
+          </view>
+        </view>
+        
+        <!-- 回复列表 - 显示当前评论的所有回复 -->
+        <view class="replies-container" wx:if="{{item.comment_list.length > 0}}">
+          <block wx:for="{{item.comment_list}}" wx:for-item="reply" wx:key="ID">
+            <view class="reply-item">
+              <image class="reply-avatar" src="{{reply.avatar.length > 0 ? reply.avatar : '/images/icons/default.png'}}" mode="aspectFill"></image>
+              <view class="reply-details">
+                <view class="reply-user-name">{{reply.nickname}}</view>
+                <view class="reply-content">{{reply.content}}</view>
+                <view class="reply-date-actions">
+                  <view class="reply-date">{{reply.created_at_str}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    
+    <!-- 评论输入框 - 只在点击回复后显示 -->
+    <view class="comment-input-container">
+      <input 
+        class="comment-input" 
+        placeholder="{{replyToUserName ? '回复 ' + replyToUserName + '...' : '添加评论...'}}" 
+        bindinput="onCommentInput" 
+        value="{{commentText}}" 
+        focus="{{inputFocus}}"
+        bindconfirm="submitComment"
+      />
+      <view class="comment-actions-container">
+        <image 
+          src="/images/icons/emoji.png" 
+          mode="aspectFit" 
+          bindtap="toggleEmojiPanel"
+        ></image>
+      </view>
+      <view class="send-button" bindtap="submitComment" data-review-id="{{reviewDetail.id}}">发送</view>
+    </view>
+
+    <!-- 表情选择面板 -->
+    <view class="emoji-panel {{showEmojiPanel ? 'emoji-panel-show' : ''}}" wx:if="{{showEmojiPanel}}">
+      <view class="emoji-grid">
+        <view class="emoji-item" wx:for="{{emojiList}}" wx:key="index" bindtap="selectEmoji" data-emoji="{{item}}">
+          {{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view> 

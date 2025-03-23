@@ -1,0 +1,88 @@
+<view class="container">
+  <!-- 商品信息 -->
+  <view class="product-info">
+    <image class="product-image" src="{{product.image}}" mode="aspectFill"></image>
+    <view class="product-info-container">
+      <view class="product-title">商品评价</view>
+      <!-- 总体评分 -->
+      <view class="rating-overall">
+        <view class="stars-container">
+          <view class="stars">
+            <image 
+              wx:for="{{5}}" 
+              wx:key="index" 
+              class="star-icon {{index < overallRating ? 'active' : ''}}" 
+              src="{{index < overallRating ? '/images/icons/shixing.png' : '/images/icons/kongxing.png'}}" 
+              mode="aspectFit"
+              data-rating="{{index + 1}}"
+              bindtap="{{!isReview ? 'setOverallRating' : ''}}"
+              style="{{isReview ? 'opacity: 0.8;' : ''}}"
+            ></image>
+          </view>
+          <text class="rating-text">{{ratingTexts[overallRating - 1]}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 评分项目 -->
+  <view class="rating-items">
+    <view class="rating-item" wx:for="{{ratingItems}}" wx:key="key">
+      <view class="rating-item-label">{{item.label}}</view>
+      <view class="rating-item-stars">
+        <image 
+          wx:for="{{5}}" 
+          wx:for-item="star" 
+          wx:for-index="starIndex" 
+          wx:key="starIndex" 
+          class="star-icon {{starIndex < item.rating ? 'active' : ''}}" 
+          src="{{starIndex < item.rating ? '/images/icons/shixing.png' : '/images/icons/kongxing.png'}}" 
+          mode="aspectFit"
+          data-item-key="{{item.key}}"
+          data-rating="{{starIndex + 1}}"
+          bindtap="{{!isReview ? 'setItemRating' : ''}}"
+          style="{{isReview ? 'opacity: 0.8;' : ''}}"
+        ></image>
+      </view>
+      <view class="rating-item-text">{{item.ratingText}}</view>
+    </view>
+  </view>
+  
+  <!-- 评价内容 -->
+  <view class="review-content">
+    <textarea 
+      class="review-textarea" 
+      placeholder="新鲜程度，口味如何？包装是否完好？数量/分量是否充足？" 
+      value="{{reviewContent}}"
+      bindinput="{{!isReview ? 'onContentInput' : ''}}"
+      disabled="{{isReview}}"
+      style="{{isReview ? 'background-color: #f5f5f5; color: #666;' : ''}}"
+    ></textarea>
+  </view>
+  
+  <!-- 上传图片/视频 -->
+  <view class="upload-section">
+    <view class="upload-list">
+      <view class="upload-item" wx:for="{{uploadedFiles}}" wx:key="index">
+        <image class="upload-image" src="{{item}}" mode="aspectFill"></image>
+        <view class="upload-delete" data-index="{{index}}" bindtap="{{!isReview ? 'deleteFile' : ''}}" wx:if="{{!isReview}}">×</view>
+      </view>
+      <view class="upload-button" bindtap="{{!isReview ? 'chooseMedia' : ''}}" wx:if="{{uploadedFiles.length < 9 && !isReview}}">
+        <view class="upload-icon">
+          <image src="/images/icons/camera.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 匿名评价 -->
+  <view class="anonymous-option">
+    <view class="checkbox {{isAnonymous ? 'selected' : ''}}" bindtap="{{!isReview ? 'toggleAnonymous' : ''}}" style="{{isReview ? 'opacity: 0.8;' : ''}}">
+      <view class="check-circle"></view>
+    </view>
+    <text>匿名评价</text>
+  </view>
+  
+  <!-- 提交按钮 -->
+  <view class="submit-button" wx:if="{{!isReview}}" bindtap="submitReview">提交评价</view>
+</view> 

@@ -1,0 +1,129 @@
+page {
+  background-color: #F7F7F2;
+  min-height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 标签栏样式 */
+.tab-bar {
+  display: flex;
+  background-color: #FFFFFF;
+  border-bottom: 1rpx solid #EFEFEF;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.tab-item {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666666;
+  position: relative;
+}
+
+.tab-item.active {
+  color: #333333;
+  font-weight: 500;
+}
+
+.tab-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 6rpx;
+  background-color: #6A8D4F;
+  border-radius: 3rpx;
+}
+
+/* 评价详情 */
+.review-detail {
+  padding: 30rpx;
+  background-color: #FFFFFF;
+  margin: 20rpx;
+  border-radius: 12rpx;
+}
+
+/* 评价头部 */
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.review-date {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.review-anonymous {
+  font-size: 26rpx;
+  color: #999999;
+  background-color: #F5F5F5;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+}
+
+/* 评价内容 */
+.review-content {
+  font-size: 28rpx;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+/* 评价图片 */
+.review-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20rpx;
+}
+
+.review-image {
+  width: 210rpx;
+  height: 210rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  background-color: #F5F5F5;
+  border-radius: 8rpx;
+}
+
+/* 商品信息 */
+.product-info {
+  display: flex;
+  padding: 20rpx;
+  background-color: #F8F8F8;
+  border-radius: 8rpx;
+}
+
+.product-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.product-detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.product-quantity {
+  font-size: 24rpx;
+  color: #999999;
+} 

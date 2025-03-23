@@ -1,0 +1,277 @@
+page {
+  background-color: #F7F7F2;
+  min-height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 130rpx; /* 为固定在底部的评论输入框留出空间 */
+}
+
+/* 商品图片 */
+.product-image {
+  width: 100%;
+  height: 600rpx;
+  background-color: #F5F5F5;
+}
+
+/* 商品信息 */
+.product-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+  margin-bottom: 20rpx;
+}
+
+.product-info-left {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.product-thumbnail {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 28rpx;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.product-quantity {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.product-date {
+  font-size: 22rpx;
+  color: #999999;
+  margin-left: 150rpx;
+}
+
+.date-reply {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.quantity-date {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* 评论区 */
+.comments-section {
+  margin-top: 20rpx;
+  padding: 0 30rpx;
+  background-color: #FFFFFF;
+  flex: 1;
+  overflow: auto;
+}
+
+.comment-count {
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.comment-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.comment-user-info {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.comment-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.comment-details {
+  flex: 1;
+}
+
+.comment-user-name {
+  font-size: 26rpx;
+  color: #666666;
+  margin-bottom: 10rpx;
+}
+
+.merchant-name {
+  display: flex;
+  align-items: center;
+}
+
+.merchant-tag {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  background-color: #F9AE49;
+  padding: 2rpx 10rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.comment-content {
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.date-reply {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.comment-reply-button {
+  color: #61CA8D;
+}
+
+/* 回复样式 */
+.replies-container {
+  margin-left: 80rpx;
+  margin-top: 10rpx;
+  padding: 10rpx 0;
+  border-top: 1rpx solid #F9F9F9;
+}
+
+.reply-item {
+  display: flex;
+  padding: 15rpx 0;
+}
+
+.reply-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+}
+
+.reply-details {
+  flex: 1;
+}
+
+.reply-user-name {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 6rpx;
+}
+
+.reply-content {
+  font-size: 26rpx;
+  color: #333333;
+  line-height: 36rpx;
+  margin-bottom: 8rpx;
+}
+
+.reply-date-actions {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.reply-action {
+  color: #61CA8D;
+}
+
+/* 评论输入框样式 */
+.comment-input-container {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid #F0F0F0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.comment-input {
+  flex: 1;
+  height: 70rpx;
+  background-color: #F7F7F7;
+  border-radius: 35rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+}
+
+.comment-actions-container {
+  margin: 0 20rpx;
+}
+
+.comment-actions-container image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.send-button {
+  width: 120rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  background-color: #61CA8D;
+  border-radius: 35rpx;
+}
+
+/* 表情面板样式 */
+.emoji-panel {
+  position: fixed;
+  bottom: -400rpx;
+  left: 0;
+  width: 100%;
+  height: 400rpx;
+  background-color: #FFFFFF;
+  border-top: 1rpx solid #F0F0F0;
+  transition: bottom 0.3s;
+  z-index: 99;
+}
+
+.emoji-panel-show {
+  bottom: 110rpx;
+}
+
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx;
+}
+
+.emoji-item {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+} 

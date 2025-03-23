@@ -1,0 +1,171 @@
+/* auth.wxss */
+.auth-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.auth-back-container {
+  position: absolute;
+  top: 84.38rpx;
+  left: 41.67rpx;
+}
+
+.auth-back-button {
+  width: 31.25rpx;
+  height: 31.25rpx;
+}
+
+.auth-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500rpx;
+  margin-top: 880.21rpx;
+}
+
+.wechat-login {
+  width: 583.33rpx;
+  height: 72.92rpx;
+  background: #5A8D54;
+  box-shadow: 0rpx 6rpx 6rpx 1rpx rgba(52,122,0,0.16);
+  border-radius: 46rpx 46rpx 46rpx 46rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-login {
+  width: 583.33rpx;
+  height: 72.92rpx;
+  margin-top: 20.83rpx;
+  background: #ADC05A;
+  box-shadow: 0rpx 6rpx 6rpx 1rpx rgba(52,122,0,0.16);
+  border-radius: 46rpx 46rpx 46rpx 46rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wechat-login-text {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 27rpx;
+  color: #FFFFFF;
+  line-height: 38rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+.phone-login-text {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 27rpx;
+  color: #FFFFFF;
+  line-height: 38rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+.auth-button {
+  width: 200rpx;
+  height: 80rpx;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.tips-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tips-text {
+  margin-top: 20.83rpx;
+  margin-left: 10.42rpx;
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 300;
+  font-size: 19rpx;
+  color: #1C1C1C;
+  line-height: 26rpx;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.tips-circle {
+  width: 19rpx;
+  height: 19rpx;
+  border: 1rpx solid #1C1C1C;
+  border-radius: 50%;
+  margin-top: 20.83rpx;
+}
+
+.tips-circle-image-container {
+  position: relative;
+  width: 19rpx;
+  height: 19rpx;
+}
+
+.tips-circle-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19rpx;
+  height: 19rpx;
+}
+
+.tips-circle-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19rpx;
+  height: 19rpx;
+  z-index: 1;
+}
+
+.tips-link {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 19rpx;
+  color: #1C1C1C;
+  line-height: 26rpx;
+  text-align: left;
+  font-style: normal;
+  text-transform: none;
+}
+
+.phone-login.disabled {
+  box-shadow: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.phone-login.disabled .phone-login-text {
+  color: #888888; /* Darker gray text for disabled state */
+}
+
+.wechat-login-text-disabled {
+  opacity: 0.5;
+}

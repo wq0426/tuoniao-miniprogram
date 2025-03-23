@@ -1,0 +1,153 @@
+page {
+  background-color: #F7F7F2;
+  min-height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  padding-bottom: 150rpx;
+}
+
+/* 搜索栏 */
+.search-bar {
+  background-color: #FFFFFF;
+  border-radius: 36rpx;
+  padding: 15rpx 30rpx;
+  margin: 20rpx 0;
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #EEEEEE;
+}
+
+.search-icon, .scan-icon {
+  width: 40rpx;
+  height: 40rpx;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  height: 60rpx;
+  font-size: 28rpx;
+  margin: 0 20rpx;
+  color: #333333;
+}
+
+/* 地址列表 */
+.address-list {
+  width: 100%;
+}
+
+.address-item{
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.address-info {
+  flex: 1;
+}
+.address-item.selected {
+  background-color:rgba(106, 141, 79, 0.14);
+  color: #FFFFFF;
+}
+
+.address-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+  flex-wrap: wrap;
+}
+
+.address-name {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+  margin-right: 20rpx;
+}
+
+.address-phone {
+  font-size: 30rpx;
+  color: #333333;
+  margin-right: 20rpx;
+}
+
+.address-tag {
+  font-size: 22rpx;
+  color: #FFFFFF;
+  background-color: #ADC05A;
+  padding: 2rpx 10rpx;
+  border-radius: 8rpx;
+}
+
+.address-detail {
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-edit {
+  margin-left: 20rpx;
+  padding-top: 10rpx;
+}
+
+.edit-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100rpx 0;
+  color: #999999;
+  font-size: 28rpx;
+}
+
+/* 添加按钮 */
+.add-btn {
+  position: fixed;
+  bottom: 40rpx;
+  left: 50rpx;
+  right: 50rpx;
+  height: 88rpx;
+  background-color: #6A8D4F;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 44rpx;
+} 
+
+.address-action-btn {
+  width: 76rpx;
+  height: 36rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 12px;
+color: #FFFFFF;
+line-height: 12px;
+text-align: left;
+font-style: normal;
+text-transform: none;
+
+background: #F9AE49;
+border-radius: 13px 13px 13px 13px;
+display: flex;
+justify-content: center;
+align-items: center;
+}

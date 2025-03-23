@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">积分兑换</view>
+    <view class="rules-button" bindtap="showRules">积分兑换规则</view>
+  </view>
+  
+  <!-- Points Info -->
+  <view class="points-info">
+    <view class="points-type">{{ nickname }}</view>
+    <view class="points-value">{{ points }}</view>
+    <view class="exchange-record" bindtap="viewExchangeRecord">兑换记录</view>
+  </view>
+  
+  <!-- Exchange Items Grid -->
+  <view class="exchange-grid">
+    <view wx:for="{{exchangeItems}}" wx:key="id" class="exchange-item {{item.is_exchange ? 'exchange-grid-disabled' : ''}}">
+      <image class="coupon-image" src="{{item.images || 'https://txtimages.oss-cn-beijing.aliyuncs.com/profile/coupon1.png'}}" mode="aspectFit"></image>
+      <view class="coupon-title" wx:if="{{item.type === 1}}">满{{item.min_amount}}-{{item.exchange_amount}}元</view>
+      <view class="coupon-title" wx:if="{{item.type === 2}}">{{item.title}}</view>
+      <view class="points-required">满{{item.points}}积分可用</view>
+      <button class="exchange-button" bindtap="exchangeItem" data-id="{{item.id}}">立即兑换</button>
+    </view>
+  </view>
+</view>

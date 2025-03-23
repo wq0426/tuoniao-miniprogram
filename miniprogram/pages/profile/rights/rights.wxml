@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title"></view>
+  </view>
+  <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/right.png" mode="widthFix"></image>
+</view>

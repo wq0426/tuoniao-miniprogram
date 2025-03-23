@@ -1,0 +1,147 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <!-- <view class="title">
+      <view class="title-left" bindtap="navigateBack">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+      </view>
+      <view class="title-right">
+        <text>确认订单</text>
+      </view>
+    </view> -->
+    
+    <!-- Address Section -->
+    <view class="address-container" bindtap="navigateToAddress">
+      <view class="address-icon">
+        <image src="/images/icons/location.png" mode="widthFix"></image>
+      </view>
+      <view class="address-details">
+        <view class="address-text">{{address.province}} {{address.city}} {{address.district}} {{address.street}} {{address.detail}}</view>
+        <view class="address-person">{{address.name}} {{address.phone}}</view>
+      </view>
+      <view class="address-arrow">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Cart Items -->
+    <block wx:for="{{cartItems}}" wx:key="id">
+    <view class="checkout-items-container">
+      <view class="store-header">
+        <image class="store-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/gou2.png" mode="widthFix"></image>
+        <text class="store-name">鸵小妥</text>
+      </view>
+      
+      <!-- Item list -->
+        <view class="checkout-item">
+          <image class="item-image" src="{{item.image}}" mode="widthFix"></image>
+          <view class="item-details">
+            <view class="item-name">{{item.name}}</view>
+            <view class="item-price-row">
+              <view class="item-price">¥{{item.price}}</view>
+              <view class="item-quantity">
+                <image class="quantity-control" src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/add.png" bindtap="increaseQuantity" data-id="{{item.id}}"></image>
+                <text>{{item.quantity}}</text>
+                <image class="quantity-control" src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/reduce.png" bindtap="decreaseQuantity" data-id="{{item.id}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+     
+      <!-- Price breakdown -->
+      <view class="price-breakdown">
+        <view class="price-row">
+          <text class="price-label">商品金额</text>
+          <text class="price-value">¥{{item.price}}</text>
+        </view>
+        <view class="price-row">
+          <text class="price-label">运费</text>
+          <text class="price-value">¥{{item.courierFeeMin}}</text>
+        </view>
+        <view class="price-row">
+          <text class="price-label">会员价格</text>
+          <text class="price-value discount">-¥{{item.memberDiscount}}</text>
+        </view>
+        <view class="price-row">
+          <text class="price-label">优惠券</text>
+          <text class="price-value discount">{{item.couponPrice > 0 ? '-¥' + item.couponPrice : '暂无'}}</text>
+        </view>
+        <view class="notes-container">
+          <view class="notes-label">备注</view>
+          <view class="notes-input-container" bindtap="focusNotes" data-id="{{item.id}}">
+            <text class="notes-placeholder" wx:if="{{!notes[item.id]}}">请填写订单备注信息</text>
+            <text wx:else>{{notes[item.id]}}</text>
+            <view class="notes-arrow">
+              <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    </block>
+    
+    <!-- Bottom Checkout Bar -->
+    <view class="checkout-bottom">
+      <view class="checkout-total">
+        <view class="total-label">合计：</view>
+        <view class="total-amount">¥{{totalPrice}}</view>
+      </view>
+      <button class="checkout-button" bindtap="placeOrder">提交订单</button>
+    </view>
+  </view>
+  <custom-tabbar></custom-tabbar>
+</scroll-view>
+
+<!-- 支付弹窗 -->
+<view class="payment-modal-mask" wx:if="{{showPaymentModal}}" bindtap="closePaymentModal"></view>
+<view class="payment-modal {{showPaymentModal ? 'payment-modal-show' : ''}}" wx:if="{{showPaymentModal}}">
+  <view class="payment-modal-header">
+    <view class="payment-amount">¥{{totalPrice}}</view>
+    <view class="payment-close" bindtap="closePaymentModal">
+      <image src="/images/home/close.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  
+  <view class="payment-methods">
+    <view class="payment-method {{selectedPaymentMethod === 3 ? 'selected' : 'no-selected'}} {{userAsset.balance > totalPrice ? '' : 'disabled'}}" bindtap="selectPaymentMethod" data-method="3">
+      <view class="payment-method-icon">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/yue.png" mode="aspectFit"></image>
+      </view>
+      <view class="payment-method-name">余额支付(¥{{userAsset.balance}})</view>
+      <view class="payment-method-check {{selectedPaymentMethod === 3 ? 'selected' : 'no-selected'}}">
+        <image wx:if="{{selectedPaymentMethod === 3}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="payment-method {{selectedPaymentMethod === 1 ? 'selected' : 'no-selected'}}" bindtap="selectPaymentMethod" data-method="1">
+      <view class="payment-method-icon">
+        <image src="/images/icons/wechat-pay.png" mode="aspectFit"></image>
+      </view>
+      <view class="payment-method-name">微信钱包</view>
+      <view class="payment-method-check {{selectedPaymentMethod === 1 ? 'selected' : 'no-selected'}}">
+        <image wx:if="{{selectedPaymentMethod === 1}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    
+    <view class="payment-method {{selectedPaymentMethod === 2 ? 'selected' : 'no-selected'}}" bindtap="selectPaymentMethod" data-method="2">
+      <view class="payment-method-icon">
+        <image src="/images/icons/alipay.png" mode="aspectFit"></image>
+      </view>
+      <view class="payment-method-name">支付宝</view>
+      <view class="payment-method-check {{selectedPaymentMethod === 2 ? 'selected' : 'no-selected'}}">
+        <image wx:if="{{selectedPaymentMethod === 2}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="confirm-modal {{showCancelConfirm ? 'show' : ''}}">
+    <view class="modal-content" catchtap="stopPropagation">
+      <view class="modal-title">支付还未完成，是否退出？</view>
+      <view class="modal-buttons">
+        <view class="modal-button cancel" bindtap="closeModal">退出</view>
+        <view class="modal-button confirm" bindtap="confirmPay">继续支付</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="payment-confirm-button" bindtap="confirmPay">确认付款</view>
+</view> 

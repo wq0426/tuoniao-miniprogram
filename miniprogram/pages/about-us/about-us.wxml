@@ -1,0 +1,84 @@
+<view class="container">
+  <!-- 会员单位标题 -->
+  <view class="section-title">
+    <view class="title-text">会员单位</view>
+    <view class="title-underline">
+      <image src="/images/icons/group-title.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="certificate-container">
+    <swiper 
+      class="certificate-swiper" 
+      autoplay="{{true}}" 
+      interval="3000" 
+      circular="{{true}}"
+      bindchange="swiperChange"
+      current="{{currentCertificate}}"
+      indicator-dots="{{false}}"
+    >
+      <swiper-item wx:for="{{certificates[0]}}" wx:key="*this">
+        <image 
+          class="certificate-image" 
+          src="{{item}}" 
+          mode="aspectFit"
+          bindtap="previewImage"
+          data-src="{{item}}"
+        ></image>
+      </swiper-item>
+    </swiper>
+    <view class="indicator-container">
+      <view class="indicator {{currentCertificate === 0 ? 'active' : ''}}"></view>
+      <view class="indicator {{currentCertificate === 1 ? 'active' : ''}}"></view>
+    </view>
+  </view>
+  <view class="description-container">
+    <view class="description-text">
+      经过严格的审核与评估，我单位已正式成为中国鸵鸟养殖开发协会的团体会员。这一会员身份的获得，示意我们肩负推动鸵鸟产业发展的责任和使命，将与协会及其他会员单位携手合作，共同促进鸵鸟养殖行业的规范化、标准化和可持续发展。
+    </view>
+    <view class="description-text">
+      成为中国鸵鸟养殖开发协会的团体会员，是我单位发展史上的一个重要里程碑。我们将积极响应国家政策，推动鸵鸟养殖产业与旅游、文化等其他产业的融合发展，为乡村振兴和地方经济发展做出更大的贡献。
+    </view>
+  </view>
+
+
+  <view class="section-title mt-40">
+    <view class="title-text">养殖信息</view>
+    <view class="title-underline">
+      <image src="/images/icons/group-title.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="certificate-container">
+    <swiper 
+      class="certificate-swiper" 
+      autoplay="{{true}}" 
+      interval="3000" 
+      circular="{{true}}"
+      bindchange="swiperChange"
+      current="{{currentCertificate}}"
+      indicator-dots="{{false}}"
+    >
+      <swiper-item wx:for="{{certificates[1]}}" wx:key="*this">
+        <image 
+          class="certificate-image" 
+          src="{{item}}" 
+          mode="aspectFit"
+          bindtap="previewImage"
+          data-src="{{item}}"
+        ></image>
+      </swiper-item>
+    </swiper>
+    <view class="indicator-container">
+      <view class="indicator {{currentCertificate === 0 ? 'active' : ''}}"></view>
+      <view class="indicator {{currentCertificate === 1 ? 'active' : ''}}"></view>
+    </view>
+  </view>
+  <view class="description-container">
+    <view class="description-text">
+      经过严格的审核与评估，我单位已正式成为中国鸵鸟养殖开发协会的团体会员。这一会员身份的获得，示意我们肩负推动鸵鸟产业发展的责任和使命，将与协会及其他会员单位携手合作，共同促进鸵鸟养殖行业的规范化、标准化和可持续发展。
+    </view>
+    <view class="description-text">
+      成为中国鸵鸟养殖开发协会的团体会员，是我单位发展史上的一个重要里程碑。我们将积极响应国家政策，推动鸵鸟养殖产业与旅游、文化等其他产业的融合发展，为乡村振兴和地方经济发展做出更大的贡献。
+    </view>
+  </view>
+
+</view> 

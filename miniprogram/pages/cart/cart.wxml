@@ -1,0 +1,98 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <view class="title">
+        <view class="title-left">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home.png" bindtap="navigateToHome" mode="widthFix"></image>
+        </view>
+        <view class="title-right">
+            <text>购物车</text>
+        </view>
+    </view>
+    
+    <!-- Empty Cart State -->
+    <view class="empty-cart" wx:if="{{isCartEmpty}}">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="aspectFit"></image>
+      <text>购物车还是空的哦～</text>
+      <button bindtap="navigateToCategory">去逛逛</button>
+    </view>
+    
+    <!-- Cart Items -->
+    <block wx:if="{{!isCartEmpty}}">
+      <view class="title-content-container">
+        <view class="title-edit">
+          <text bindtap="toggleEditMode">{{isEditMode ? '完成' : '编辑'}}</text>
+        </view>
+        <view class="title-content-container-item">
+          <view class="title-content-container-item-all">
+            <view class="title-content-container-item-all-content" bindtap="toggleSelectAll">
+              <view class="{{selectedAll ? 'title-content-container-item-item-all-left' : 'title-content-container-item-item-none'}}">
+                <image wx:if="{{selectedAll}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="widthFix"></image>
+              </view>
+            </view>
+            <image class="title-content-container-item-all-image" src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/gou2.png" mode="widthFix"></image>
+            <text>鸵小妥</text>
+          </view>
+          <view class="title-content-container-items">
+            <block wx:for="{{cartItems}}" wx:key="id">
+              <view class="title-content-container-item-item">
+                <view class="title-content-container-item-item-content" bindtap="toggleItemSelection" data-id="{{item.id}}">
+                  <view class="{{item.selected ? 'title-content-container-item-item-left' : 'title-content-container-item-item-none'}}">
+                    <image wx:if="{{item.selected}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="widthFix"></image>
+                  </view>
+                </view>
+                <image class="title-content-container-item-item-image" src="{{item.image}}" mode="widthFix"></image>
+                <view class="title-content-container-item-item-right">
+                  <view class="title-content-container-item-item-right-name">{{item.name}}</view>
+                  <view class="title-content-container-item-item-right-price">
+                    <view class="title-content-container-item-item-right-price-text">¥{{item.price}}</view>
+                    <view class="title-content-container-item-item-right-price-num">
+                      <image class="title-content-container-item-item-right-price-num-image" 
+                             src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/reduce.png" 
+                             mode="widthFix" 
+                             bindtap="decreaseQuantity" 
+                             data-id="{{item.id}}"></image>
+                      <text>{{item.quantity}}</text>
+                      <image class="title-content-container-item-item-right-price-num-image" 
+                             src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/add.png" 
+                             mode="widthFix" 
+                             bindtap="increaseQuantity" 
+                             data-id="{{item.id}}"></image>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      
+      <!-- Bottom Bar - Normal Mode -->
+      <view class="title-content-container-bottom" wx:if="{{!isEditMode && !isCartEmpty}}">
+        <view class="title-content-container-bottom-content-left title-content-container-bottom-content-left-image">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/package.png" mode="widthFix"></image>
+          <view class="title-content-container-bottom-content-pre-text">预计到手</view>
+          <view class="title-content-container-bottom-content-price-text">¥{{totalPrice}}</view>
+        </view>
+        <view class="title-content-container-bottom-content-right" bindtap="navigateToCheckout">
+          <text>去结算</text>
+        </view>
+      </view>
+      
+      <!-- Bottom Bar - Edit Mode -->
+      <view class="title-content-container-bottom edit-mode" wx:if="{{isEditMode && !isCartEmpty}}">
+        <view class="title-content-container-bottom-content-left">
+          <view class="select-all-container" bindtap="toggleSelectAll">
+            <view class="{{selectedAll ? 'checkbox-selected' : 'checkbox-unselected'}}">
+              <image wx:if="{{selectedAll}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="widthFix"></image>
+            </view>
+            <text class="select-all-text">全选</text>
+          </view>
+        </view>
+        <view class="title-content-container-bottom-content-right delete-btn" bindtap="deleteSelectedItems">
+          <text>删除</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<custom-tabbar></custom-tabbar>

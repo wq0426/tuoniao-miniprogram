@@ -1,0 +1,4 @@
+<view class="index-container">
+<!-- 在小程序页面中嵌入 -->
+    <web-view src="{{url}}"></web-view>
+</view> 

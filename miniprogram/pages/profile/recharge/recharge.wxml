@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 标题栏 -->
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">余额充值</view>
+  </view> -->
+  
+  <!-- 充值金额输入区域 -->
+  <view class="recharge-section">
+    <view class="section-title">充值金额</view>
+    <view class="amount-input-container">
+      <text class="currency-symbol">¥</text>
+      <input 
+        class="amount-input" 
+        type="digit" 
+        bindinput="onAmountInput" 
+        value="{{amount}}" 
+        placeholder="" 
+        focus="true" 
+      />
+    </view>
+  </view>
+  
+  <!-- 快速选择金额按钮区域 (可选) -->
+  <!-- <view class="quick-amount-section">
+    <view class="quick-amount-item" bindtap="selectAmount" data-amount="50">¥50</view>
+    <view class="quick-amount-item" bindtap="selectAmount" data-amount="100">¥100</view>
+    <view class="quick-amount-item" bindtap="selectAmount" data-amount="200">¥200</view>
+    <view class="quick-amount-item" bindtap="selectAmount" data-amount="500">¥500</view>
+  </view> -->
+  
+  <!-- 充值按钮 -->
+  <view class="recharge-button" bindtap="openPaymentModal">立即充值</view>
+
+  <!-- 支付弹窗 -->
+<view class="payment-modal-mask" wx:if="{{showPaymentModal}}" bindtap="closePaymentModal"></view>
+<view class="payment-modal {{showPaymentModal ? 'payment-modal-show' : ''}}">
+  <view class="payment-modal-header">
+    <view class="payment-amount">¥{{totalPrice}}</view>
+    <view class="payment-close" bindtap="closePaymentModal">
+      <image src="/images/home/close.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  
+  <view class="payment-methods">
+    <view class="payment-method {{selectedPaymentMethod === 'wechat' ? 'selected' : 'no-selected'}}" bindtap="selectPaymentMethod" data-method="wechat">
+      <view class="payment-method-icon">
+        <image src="/images/icons/wechat-pay.png" mode="aspectFit"></image>
+      </view>
+      <view class="payment-method-name">微信钱包</view>
+      <view class="payment-method-check {{selectedPaymentMethod === 'wechat' ? 'selected' : 'no-selected'}}">
+        <image wx:if="{{selectedPaymentMethod === 'wechat'}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    
+    <view class="payment-method {{selectedPaymentMethod === 'alipay' ? 'selected' : 'no-selected'}}" bindtap="selectPaymentMethod" data-method="alipay">
+          <view class="payment-method-icon">
+            <image src="/images/icons/alipay.png" mode="aspectFit"></image>
+          </view>
+          <view class="payment-method-name">支付宝</view>
+          <view class="payment-method-check {{selectedPaymentMethod === 'alipay' ? 'selected' : 'no-selected'}}">
+            <image wx:if="{{selectedPaymentMethod === 'alipay'}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="aspectFit"></image>
+          </view>
+        </view>
+      </view>
+      
+      <view class="payment-confirm-button" bindtap="handleRecharge">确认付款</view>
+    </view> 
+</view> 

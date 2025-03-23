@@ -1,0 +1,47 @@
+<view class="container">
+  <!-- <view class="title">
+    <view class="title-left" bindtap="navigateToHome">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title-right">
+      <text>分布式农场</text>
+    </view>
+  </view> -->
+  <view class="map-container">
+    <map 
+      id="myMap" 
+      longitude="{{longitude}}" 
+      latitude="{{latitude}}"
+      scale="4"
+      markers="{{markers}}"
+      bindmarkertap="onMarkerTap"
+      show-location="true"
+      enable-zoom="true"
+      enable-scroll="true"
+      style="width: 100%; height: 800rpx;"
+    ></map>
+  </view>
+  <view class="map-detail-container" wx:if="{{showDetail}}">
+    <view class="map-xinjiang-detail-title">
+      <view class="map-xinjiang-detail-title-left-back" bindtap="closeDetail">
+        <image src="/images/home/close.png" mode="widthFix"></image>
+      </view>
+      <view class="map-xinjiang-detail-title-left">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/banner/banner3.png" mode="widthFix"></image>
+      </view>
+      <view class="map-xinjiang-detail-title-right">
+        <view class="map-xinjiang-detail-title-right-title">
+          <text>{{title}}</text>
+        </view>
+        <view class="map-xinjiang-detail-title-right-title-tips">
+          <text>{{address}}</text>
+        </view>
+      </view>
+    </view>
+      <view class="map-xinjiang-detail-content">
+        <view class="map-xinjiang-detail-content-item">
+          <text>{{description}}</text>
+        </view>
+      </view>
+  </view>
+</view>

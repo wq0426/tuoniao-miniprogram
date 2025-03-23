@@ -1,0 +1,279 @@
+/* 页面整体样式 */
+.container {
+  width: 750rpx;
+  height: 100vh;
+  position: relative;
+  padding: 20rpx;
+}
+
+.title {
+    width: 750rpx;
+    height: 115rpx;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
+
+.title-left {
+    height: 115rpx;
+    margin-left: 41.67rpx;
+    margin-top: 100.38rpx;
+}
+.title-left image {
+    width: 31.25rpx;
+    height: 31.25rpx;
+}
+
+.title-right {
+    width: 677rpx;
+    height: 115rpx;
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 400;
+    font-size: 31rpx;
+    color: #1C1C1C;
+    line-height: 44rpx;
+    text-align: center;
+    font-style: normal;
+    text-transform: none;
+    margin-top: 93.38rpx;
+    margin-right: 31.25rpx;
+}
+
+.map {
+  position: relative;
+  width: 750rpx;
+  height: 600rpx;
+}
+
+.map-image {
+  width: 900rpx;
+  height: 800rpx;
+  position: absolute;
+  top: 0;
+  right: 10rpx;
+}
+
+.map-xinjiang {
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 230rpx;
+  left: 90rpx;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-zigong {
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 450rpx;
+  left: 360rpx;
+  display: flex;
+}
+
+.map-deyang {
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 410rpx;
+  left: 350rpx;
+  display: flex;
+}
+
+.map-guizhou {
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 470rpx;
+  left: 400rpx;
+  display: flex;
+}
+
+.map-zongbu {
+  width: 50rpx;
+  height: 50rpx;
+  position: fixed;
+  top: 430rpx;
+  left: 320rpx;
+  display: flex;
+}
+.map-zigong.map-zigong-image,
+.map-deyang.map-deyang-image,
+.map-xinjiang.map-xinjiang-image,
+.map-guizhou.map-guizhou-image,
+.map-zongbu.map-zongbu-image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.map-xinjiang-button, .map-zigong-button, .map-deyang-button, .map-guizhou-button, .map-zongbu-button {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  padding: 0;
+  box-shadow: 0 0 5rpx rgba(0,0,0,0.3);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-item-head, .image-item-head image {
+  width: 750rpx;
+  height: 600rpx;
+  z-index: 1;
+}
+
+.map-xinjiang-detail {
+  height: 150rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.map-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.map-xinjiang-detail-title {
+  width: 666rpx;
+  height: 162rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #FFFFFF;
+}
+
+.map-xinjiang-detail-title-left, .map-xinjiang-detail-title-left image {
+  width: 162rpx;
+  height: 162rpx;
+}
+
+.map-xinjiang-detail-title-right {
+  width: 483rpx;
+  height: 162rpx;
+  margin-left: 20.83rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.map-xinjiang-detail-title-right-title {
+  width: 483rpx;
+  height: 23rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 32rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.map-xinjiang-detail-title-right-title-tips {
+  width: 483rpx;
+height: 85rpx;
+margin-top: 20.83rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 19rpx;
+color: #7F7F7F;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.map-xinjiang-detail-content {
+  width: 666rpx;
+  height: 171rpx;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+background: #F7F7F2;
+border-radius: 10rpx 10rpx 10rpx 10rpx;
+padding: 20.83rpx 22.92rpx 20.83rpx 22.92rpx;
+}
+
+.map-xinjiang-detail-content-item {
+  width: 666rpx;
+height: 129rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 35rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.map-xinjiang-detail-title-left-back {
+  width: 23rpx;
+  height: 23rpx;
+  position: absolute;
+  top: 5rpx;
+  right: -35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-xinjiang-detail-title-left-back image {
+  width: 23rpx;
+  height: 23rpx;
+}
+
+.map-container {
+  width: 100%;
+  height: 800rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 确保地图占满容器 */
+.map-container map {
+  width: 100%;
+  height: 100%;
+}
+
+/* 详情容器动画效果 */
+.map-detail-container {
+  animation: slide-up 0.3s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20rpx);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

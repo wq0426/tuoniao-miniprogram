@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <image class="background-image" src="https://txtimages.oss-cn-beijing.aliyuncs.com/background.jpg"></image>
+    <!-- <view class="auth-back-container">
+      <image class="auth-back-button" src="{{backButtonSrc}}" bindtap="onBackButtonTap" bindtouchstart="onBackButtonHover" bindtouchend="onBackButtonLeave" mode="widthFix"></image>
+    </view> -->
+    <view class="custom-item">
+      <view class="phone-input-container">
+        <view class="phone-input">
+          <image class="phone-input-img" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/phone-input.png"></image>
+          <input class="phone-input-text" placeholder="请输入手机号" maxlength="11" bindinput="onPhoneNumberChange" />
+        </view>
+      </view>
+      <view class="code-input-container">
+        <view class="phone-input">
+          <image class="phone-input-img" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/code-input.png"></image>
+          <input class="code-input-text" placeholder="请输入验证码" bindinput="onVerificationCodeChange" />
+          <text class="validate-text {{isCountingDown ? 'validate-text-disabled' : ''}}" bindtap="getVerificationCode">{{isCountingDown ? countdown + 's' : '获取验证码'}}</text>
+        </view>
+      </view>
+      <view class="submit-input-container">
+        <view class="submit-btn" bindtap="login">
+          <text class="submit-text">立即登录</text>
+        </view>
+      </view>
+      <!-- <view class="tips-container">
+        <text class="tips-before">已有账号</text>
+        <view>
+          <text class="tips-after">立即登录</text>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</scroll-view>

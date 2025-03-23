@@ -1,0 +1,58 @@
+<view class="landscape-container">
+  <image class="fullscreen-bg" src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/monitor2.png" mode="aspectFill"></image>
+  
+  <!-- 头部导航区 -->
+  <view class="header">
+    <view class="back-btn" bindtap="navigateToHome">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="camera-selector" bindtap="toggleSelect">
+      <text>{{selectedItemName}}</text>
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/select.png" mode="widthFix"></image>
+      
+      <!-- 下拉选择菜单 -->
+      <view class="dropdown-menu" wx:if="{{showSelect}}">
+        <view class="menu-item {{selectedItemIndex === index ? 'selected' : ''}}" 
+              wx:for="{{itemNames}}" 
+              wx:key="index"
+              bindtap="selectItem" 
+              data-index="{{index}}">
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 音量控制 -->
+  <view class="volume-control">
+    <view class="volume-slider">
+      <view class="volume-track">
+        <view class="volume-level"></view>
+      </view>
+      <view class="volume-handle"></view>
+    </view>
+    <view class="volume-button">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/voice.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  
+  <!-- 缩放控制 -->
+  <view class="zoom-control">
+    <view class="zoom-track">
+      <view class="zoom-start"></view>
+      <view class="zoom-level"></view>
+      <view class="zoom-handle"></view>
+      <view class="zoom-end"></view>
+    </view>
+  </view>
+  
+  <!-- 方向控制 -->
+  <view class="direction-control">
+    <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/directions.png" mode="aspectFit"></image>
+  </view>
+  
+  <!-- 全屏按钮 -->
+  <!-- <view class="fullscreen-button" bindtap="toggleFullscreen">
+    <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/fullscreen.png" mode="aspectFit"></image>
+  </view> -->
+</view>

@@ -1,0 +1,132 @@
+<view class="container">
+  <!-- 标签栏 -->
+  <view class="tabs-container">
+    <view 
+      class="tab-item {{currentTab == index ? 'active' : ''}}" 
+      wx:for="{{tabs}}" 
+      wx:key="index" 
+      bindtap="switchTab" 
+      data-index="{{index}}"
+    >
+      <text>{{item}}</text>
+      <view class="tab-line" wx:if="{{currentTab == index}}"></view>
+    </view>
+  </view>
+  
+  <!-- 已评价列表 -->
+  <view class="reviews-list" wx:if="{{currentTab == 2 && reviewItems.length > 0}}">
+    <view class="review-card" wx:for="{{reviewItems}}" wx:key="id" wx:if="{{item.status == 1}}">
+      <!-- 评价头部 -->
+      <view class="review-header">
+        <view class="review-date">{{item.createdAt || '2025-02-15'}}</view>
+        <view class="review-actions">
+          <view class="review-anonymous">{{item.isAnonymous == 1 ? '匿名' : '公开'}}</view>
+          <view class="review-delete" bindtap="{{item.isAnonymous == 1 ? '' : 'onReviewSettingsClick'}}" data-id="{{item.id}}">
+            <image src="/images/icons/down.png" mode="aspectFit"></image>
+          </view>
+        </view>
+      </view>
+      
+      <view class="review-content-container" data-id="{{item.order_item_id}}" data-review-id="{{item.id}}" bindtap="viewReview">
+        <!-- 评价内容 -->
+        <view class="review-content">{{item.reviewContent || ''}}</view>
+        
+        <!-- 评价图片 -->
+        <view class="review-images" wx:if="{{item.reviewImages && item.reviewImages.length > 0}}">
+          <image 
+            wx:for="{{item.reviewImages}}" 
+            wx:for-item="image" 
+            wx:key="index" 
+            wx:if="{{image.length > 0}}"
+            src="{{image}}" 
+            mode="aspectFill" 
+            class="review-image"
+            bindtap="previewImage" 
+            data-urls="{{item.reviewImages}}" 
+            data-current="{{image}}"
+          ></image>
+        </view>
+        
+        <!-- 商品信息 -->
+        <view class="product-info" bindtap="navigateToProductDetail" data-id="{{item.productId}}">
+          <image class="product-image" src="{{item.productImage}}" mode="aspectFill"></image>
+          <view class="product-details">
+            <view class="product-name">{{item.productName}}</view>
+            <view class="product-count">数量：共{{item.quantity}}件</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 待评价列表 -->
+  <view class="reviews-list" wx:if="{{currentTab != 2 && reviewItems.length > 0}}">
+    <view class="review-item" wx:for="{{reviewItems}}" wx:key="id">
+      <!-- 商店信息 -->
+      <view class="store-info">
+        <view class="store-name">
+          <image class="store-icon" src="{{item.store_icon}}" mode="aspectFit"></image>
+          <text>{{item.store_name}}</text>
+        </view>
+        <view class="store-status">
+          <text class="status-text">{{item.status_text}}</text>
+        </view>
+      </view>
+      
+      <!-- 商品信息 -->
+      <view class="product-info" bindtap="navigateToProductDetail" data-id="{{item.product_id}}">
+        <image class="product-image" src="{{item.product_image}}" mode="aspectFill"></image>
+        <view class="product-details">
+          <view class="product-name">{{item.product_name}}</view>
+          <view class="product-price-count">
+            <view class="product-price">¥{{item.price}}</view>
+            <view class="product-count">共{{item.quantity}}件</view>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 操作按钮 -->
+      <view class="action-buttons">
+        <view class="action-button delete" wx:if="{{item.review_status == 1}}" bindtap="deleteReview" data-id="{{item.id}}">删除评价</view>
+        
+        <!-- 待评价状态特有按钮 -->
+        <view wx:if="{{item.review_status == 0}}" class="action-button primary" bindtap="navigateToReview" data-id="{{item.order_item_id}}">评价</view>
+        
+        <!-- 已评价状态特有按钮 -->
+        <view wx:if="{{item.review_status == 1}}" class="action-button secondary" bindtap="viewReview" data-id="{{item.order_item_id}}" data-review-id="{{item.id}}">查看评价</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{reviewItems.length === 0}}">
+    <image class="empty-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/coupon-blank.png" mode="aspectFit"></image>
+    <text>暂无评价</text>
+  </view>
+</view>
+
+<!-- 底部设置弹窗 -->
+<view class="modal-mask" wx:if="{{showSettingsModal}}" bindtap="closeSettingsModal"></view>
+<view class="modal-dialog {{showSettingsModal ? 'modal-show' : ''}}">
+  <view class="modal-title">可进行以下修改</view>
+  <view class="modal-close" bindtap="closeSettingsModal">
+    <image src="/images/icons/close.png" mode="aspectFit"></image>
+  </view>
+  <view class="modal-content">
+    <view class="modal-item" bindtap="setReviewPublic">
+      <view class="modal-item-icon">
+        <image src="/images/icons/open.png" mode="aspectFit"></image>
+      </view>
+      <view class="modal-item-text">设为公开</view>
+    </view>
+    <view class="modal-item" bindtap="hideReview">
+      <view class="modal-item-icon">
+        <image src="/images/icons/hidden.png" mode="aspectFit"></image>
+      </view>
+      <view class="modal-item-text">
+        <view>隐藏评价</view>
+        <view class="modal-item-desc">隐藏后无法恢复，请谨慎操作</view>
+      </view>
+    </view>
+  </view>
+</view> 

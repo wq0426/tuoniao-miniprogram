@@ -1,0 +1,170 @@
+page {
+  background: linear-gradient( 180deg, #ADC05A 0%, rgba(247,247,242,0) 100%);
+  border-radius: 0rpx 0rpx 0rpx 0rpx;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding: 40rpx 30rpx 20rpx;
+}
+
+.back-icon {
+  width: 31.67rpx;
+  height: 31.67rpx;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon image {
+  width: 41.67rpx;
+  height: 41.67rpx;
+}
+
+.title {
+  position: absolute;
+  left: 40%;
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #FFFFFF;
+  line-height: 44rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+/* Records List */
+.records-list {
+  margin: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.record-item {
+  width: 688rpx;  
+  height: 116rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20rpx;
+  justify-content: flex-start;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #F0F0F0;
+background: #F7F7F2;
+border-radius: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.record-item:last-child {
+  border-bottom: none;
+}
+
+.record-left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10.42rpx;
+}
+
+.record-name {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 32rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.record-expired{
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 17rpx;
+color: #7F7F7F;
+line-height: 23rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.record-date {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 17rpx;
+color: #7F7F7F;
+line-height: 23rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.record-right{
+  width: 145rpx;
+  height: 31rpx;
+background: #5A8D54;
+border-radius: 19rpx 19rpx 19rpx 19rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 40rpx;
+}
+
+.record-points {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #7B9A57;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.record-status {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 17rpx;
+color: #FFFFFF;
+line-height: 23rpx;
+text-align: center;
+font-style: normal;
+text-transform: none;
+} 
+
+.record-item-image image {
+  width: 83rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+}
+
+.record-title {
+  width: 688rpx;
+  height: 40rpx;
+  margin-left: 41.67rpx;
+  margin-top: 64rpx;
+}
+
+.record-title-text {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 25rpx;
+color: #FFFFFF;
+line-height: 35rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}

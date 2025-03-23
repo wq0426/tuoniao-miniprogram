@@ -1,0 +1,227 @@
+page {
+  background-color: #F7F7F2;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 30rpx;
+  background-color: #FFFFFF;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 88rpx;
+  padding: 60rpx 30rpx 20rpx;
+  background: #F7F7F2;
+  position: relative;
+}
+
+.back-icon {
+  width: 31.67rpx;
+  height: 31.67rpx;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon image {
+  width: 41.67rpx;
+  height: 41.67rpx;
+}
+
+.title {
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  right: 0;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 400;
+  color: #1C1C1C;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80rpx;
+  background-color: #F7F7F2;
+  border-bottom: 1rpx solid #EFEFEF;
+}
+
+.tab {
+  position: relative;
+  flex: 1;
+  padding: 20rpx 0;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #5A8D54;
+line-height: 32rpx;
+text-align: center;
+font-style: normal;
+text-transform: none;
+}
+
+.tab.active {
+  color: #6D8F56;
+  font-weight: 500;
+}
+
+.tab-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background-color: #6D8F56;
+  border-radius: 2rpx;
+}
+
+/* Filter */
+.filter {
+  padding: 20rpx;
+  background-color: #FFFFFF;
+}
+
+.filter-tag {
+  width: 97rpx;
+  height: 31rpx;
+  margin-left: 20.67rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color: #F9AE49;
+  font-size: 24rpx;
+  border: 1rpx solid #F9AE49;
+  border-radius: 24rpx;
+}
+
+/* Coupon List */
+.coupon-list {
+  padding: 20rpx;
+  padding-top: 0rpx;
+  background-color: #FFFFFF;
+}
+
+.coupon-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  height: 170rpx;
+  background-color: #FFF9F0;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.coupon-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 168rpx;
+  padding: 20rpx;
+}
+
+.coupon-amount {
+  display: flex;
+  align-items: baseline;
+}
+
+.currency {
+  font-size: 30rpx;
+  color: #F9AE49;
+}
+
+.amount {
+  font-size: 90rpx;
+  color: #F9AE49;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.coupon-condition {
+  font-size: 24rpx;
+  color: #F9AE49;
+  margin-top: 10rpx;
+}
+
+.coupon-divider {
+  width: 2rpx;
+  background: linear-gradient(to bottom, transparent 5rpx, #F2DDBB 5rpx, #F2DDBB 15rpx, transparent 15rpx);
+  background-size: 2rpx 20rpx;
+  background-repeat: repeat-y;
+}
+
+.coupon-right {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coupon-desc {
+  width: 342rpx;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 400;
+}
+
+.coupon-expiry {
+  width: 342rpx;
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.use-button {
+  justify-content: center;
+  margin-right: 20.67rpx;
+  width: 114rpx;
+  height: 41rpx;
+  background-color: #F9AE49;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  border-radius: 27rpx;
+  text-align: center;
+  line-height: 41rpx;
+}
+
+/* Empty state */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100rpx;
+}
+
+.empty-state image {
+  width: 467rpx;
+  height: 466rpx;
+  margin-bottom: 20rpx;
+}
+
+.empty-state text {
+  margin-top: -60rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 23rpx;
+color: #7F7F7F;
+line-height: 32rpx;
+text-align: center;
+font-style: normal;
+text-transform: none;
+} 

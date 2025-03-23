@@ -1,0 +1,577 @@
+/* pages/product-detail/product-detail.wxss */
+.container {
+  padding-bottom: 100rpx;
+  padding-right: 21rpx;
+  padding-left: 21rpx;
+  background-color: #F7F7F2;
+}
+
+/* 商品轮播图 */
+.product-swiper {
+  width: 100%;
+  height: 681rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.indicator {
+  position: absolute;
+  right: 50rpx;
+  top: 590rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 24rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+/* 价格标签 */
+.price-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 174, 71, 0.9);
+  color: #fff;
+  display: flex;
+  padding: 20rpx 30rpx;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+}
+
+.price-left {
+  flex: 1;
+}
+
+.price-label {
+  font-size: 28rpx;
+}
+
+.price-value {
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.unit {
+  font-size: 28rpx;
+  font-weight: normal;
+}
+
+.price-right {
+  flex: 2;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+
+/* 商品基本信息 */
+.product-info {
+    height: 177rpx;
+  background-color: #fff;
+  padding: 30rpx;
+  padding-bottom: 0rpx;
+  margin-bottom: 20rpx;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.current-price {
+    width: 180rpx;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #ff6b01;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 31rpx;
+color: #1C1C1C;
+line-height: 44rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+display: flex;
+align-items: center;
+}
+
+.special-price {
+width: 77rpx;
+height: 25rpx;
+margin-left: 10rpx;
+background: #ADC05A;
+border-radius: 13rpx 13rpx 13rpx 13rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 18rpx;
+color: #FFFFFF;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.sales{
+    border-left: 1rpx solid #999;
+    padding-left: 10rpx;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 19rpx;
+color: #B2B2B2;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.original-price {
+  font-size: 26rpx;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+}
+
+.sales {
+  color: #999;
+  margin-left: auto;
+}
+
+.product-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.product-spec-delivery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 优惠券区域 */
+.coupon-section {
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  align-items: center;
+
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 19rpx;
+color: #F9AE49;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.coupon-item {
+    margin-right: 18.75rpx;
+    width: 132rpx;
+    height: 31rpx;
+border-radius: 16rpx 16rpx 16rpx 16rpx;
+border: 1rpx solid #F9AE49;
+background: #F9AE49;
+border-radius: 16rpx 16rpx 16rpx 16rpx;
+color: #FFFFFF;
+display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-coupon {
+    width: 79rpx;
+    height: 31rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1rpx solid #F9AE49;
+    color: #F9AE49;
+}
+
+.coupon-more {
+  margin-left: auto;
+  border: 1rpx solidrgb(249, 73, 76);
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+}
+
+.coupon-more image, .view-all image{
+    width: 25rpx;
+    height: 25rpx;
+}
+
+/* 评价区域 */
+.comment-section {
+    height: 66.6rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30.83rpx;
+  padding-right: 30.83rpx;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.comment-title {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 25rpx;
+color: #1C1C1C;
+line-height: 35rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.view-all {
+  font-size: 28rpx;
+  color: #999;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 500;
+font-size: 17rpx;
+color: #B2B2B2;
+line-height: 23rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+/* 详情介绍 */
+.detail-title {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 23rpx;
+color: #1C1C1C;
+line-height: 32rpx;
+text-align: center;
+font-style: normal;
+text-transform: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.detail-content {
+  width: 100vw;
+  height: 8000rpx;
+  background-color: #fff;
+}
+
+.detail-content image {
+    width: 100vw;
+    height: 8000rpx;
+}
+
+/* 底部操作栏 */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  height: 80px;
+  border-top: 1rpx solid #eee;
+}
+
+.footer-buttons {
+  display: flex;
+  width: 40%;
+}
+
+.action-button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 22rpx;
+  color: #666;
+  position: relative;
+}
+
+.action-icon {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 20rpx;
+  background-color: #ff6b01;
+  color: #fff;
+  font-size: 20rpx;
+  min-width: 32rpx;
+  height: 32rpx;
+  border-radius: 16rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+
+.buy-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 67rpx;
+}
+
+.add-cart-btn, .buy-now-btn {
+  flex: 1;
+  width: 180rpx;
+  height: 58rpx;
+  text-align: center;
+  border-radius: 0;
+border-radius: 29rpx 29rpx 29rpx 29rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 25rpx;
+color: #FFFFFF;
+line-height: 35rpx;
+font-style: normal;
+text-transform: none;
+}
+
+.add-cart-btn {
+  background-color: #ffaa33;
+  color: #fff;
+}
+
+.buy-now-btn {
+    margin-left: 10rpx;
+  background-color: #a4c639;
+  color: #fff;
+}
+
+/* 图标字体 */
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-right:after {
+  content: ">";
+}
+
+.product-name{
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 10rpx;
+}
+
+.product-name-delivery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-icon{
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.product-spec-delivery{
+    font-family: Source Han Sans CN, Source Han Sans CN;
+    font-weight: 500;
+    font-size: 19rpx;
+    color: #B2B2B2;
+    line-height: 26rpx;
+    text-align: left;
+    font-style: normal;
+    text-transform: none;
+}
+
+/* Coupon Popup Styles */
+.coupon-popup-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.coupon-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  z-index: 1001;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.coupon-popup-header {
+  position: relative;
+  padding: 30rpx 0;
+  text-align: center;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.coupon-popup-title {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+}
+
+.coupon-popup-close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.coupon-popup-close image {
+  width: 100%;
+  height: 100%;
+}
+
+.coupon-popup-content {
+  padding: 20rpx;
+}
+
+.coupon-popup-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  height: 170rpx;
+  background-color: #FFF9F0;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.coupon-popup-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 168rpx;
+  padding: 20rpx;
+}
+
+.coupon-popup-amount {
+  display: flex;
+  align-items: baseline;
+}
+
+.coupon-popup-currency {
+  font-size: 30rpx;
+  color: #F9AE49;
+}
+
+.coupon-popup-number {
+  font-size: 90rpx;
+  color: #F9AE49;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.coupon-popup-condition {
+  font-size: 24rpx;
+  color: #F9AE49;
+  margin-top: 10rpx;
+}
+
+.coupon-popup-divider {
+  width: 2rpx;
+  background: linear-gradient(to bottom, transparent 5rpx, #F2DDBB 5rpx, #F2DDBB 15rpx, transparent 15rpx);
+  background-size: 2rpx 20rpx;
+  background-repeat: repeat-y;
+}
+
+.coupon-popup-right {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coupon-popup-desc {
+  width: 342rpx;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 400;
+}
+
+.coupon-popup-expiry {
+  width: 342rpx;
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.coupon-popup-use-button {
+  justify-content: center;
+  margin-right: 20.67rpx;
+  width: 114rpx;
+  height: 41rpx;
+  background-color: #F9AE49;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  border-radius: 27rpx;
+  text-align: center;
+  line-height: 41rpx;
+}
+
+.coupon-popup-use-button-disabled{
+    background-color: #999999;
+}
+
+.title-function-container-middle-service-button {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-function-container-middle-service-button image{
+    width: 45rpx;
+    height: 45rpx;
+}
+
+.custom-contact{
+  background: none;
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  color: inherit;
+  text-align: left;
+  overflow: visible;    
+}
+
+/* 重置按钮聚焦和点击效果 */
+.custom-contact::after {
+  border: none;
+}

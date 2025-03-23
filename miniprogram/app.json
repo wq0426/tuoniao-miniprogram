@@ -1,0 +1,59 @@
+{
+  "pages": [
+		"pages/guide/guide",
+		"pages/auth/auth",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/home/home",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/profile/profile",
+    "pages/cart/blank",
+    "pages/home/monitor/monitor",
+    "pages/home/monitor/detail/detail",
+    "pages/home/news/news",
+    "pages/home/news/detail/detail",
+    "pages/home/distribute/distribute",
+    "pages/category/detail/detail",
+    "pages/category/market-detail/market-detail",
+    "pages/category/market-detail/platform-recycle/platform-recycle",
+    "pages/cart/checkout/checkout",
+    "pages/profile/profile-detail/profile-detail",
+    "pages/profile/coupon-list/coupon-list",
+    "pages/profile/balance/balance",
+    "pages/profile/balance-detail/balance-detail",
+    "pages/profile/points-exchange/points-exchange",
+    "pages/profile/points-exchange-rules/points-exchange-rules",
+    "pages/profile/points-exchange-records/points-exchange-records",
+    "pages/profile/rights/rights",
+    "pages/profile/recharge/recharge",
+    "pages/profile/withdraw/withdraw",
+    "pages/orders/orders",
+    "pages/returns/returns",
+    "pages/review/review",
+    "pages/my-reviews/my-reviews",
+    "pages/return-detail/return-detail",
+    "pages/income/income",
+    "pages/address/address",
+    "pages/address-edit/address-edit",
+    "pages/about-us/about-us",
+    "pages/comments/comments",
+    "pages/review-detail/review-detail",
+    "pages/webview/webview",
+    "pages/orders/detail/detail",
+    "pages/orders/logistics/logistics"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "鸵小妥",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于展示附近的农场位置"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation"
+  ]
+}

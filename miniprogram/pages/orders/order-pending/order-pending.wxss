@@ -1,0 +1,139 @@
+page {
+  background-color: #F7F7F2;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 店铺信息与状态样式 */
+.store-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-info {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1rpx solid #F6F6F6;
+}
+
+.store-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.store-name {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.store-arrow {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 状态样式 */
+.status-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  background-color: #FFF7EB;
+}
+
+.status-text {
+  font-size: 28rpx;
+  color: #F9AE49;
+}
+
+.time-remaining {
+  padding: 6rpx 16rpx;
+  font-size: 24rpx;
+  color: #F9AE49;
+  background-color: white;
+  border-radius: 20rpx;
+}
+
+/* 商品信息样式 */
+.product-container {
+  display: flex;
+  padding: 30rpx;
+}
+
+.product-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+  background-color: #f7f7f7;
+}
+
+.product-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.4;
+}
+
+.product-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 70rpx;
+}
+
+.product-price {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.product-quantity {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 底部按钮样式 */
+.action-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20rpx 30rpx 30rpx;
+}
+
+.cancel-button, .pay-button {
+  height: 60rpx;
+  padding: 0 30rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  border-radius: 30rpx;
+}
+
+.cancel-button {
+  color: #666;
+  background-color: white;
+  border: 1rpx solid #ddd;
+  margin-right: 20rpx;
+}
+
+.pay-button {
+  color: white;
+  background-color: #F9AE49;
+} 

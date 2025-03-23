@@ -1,0 +1,120 @@
+<!-- pages/product-detail/product-detail.wxml -->
+<view class="container">
+  <!-- 商品轮播图 -->
+  <swiper class="product-swiper" indicator-dots="{{true}}" autoplay="{{true}}" 
+    interval="{{3000}}" duration="{{500}}" bindchange="swiperChange">
+    <swiper-item wx:for="{{product.images}}" wx:key="index">
+      <image src="{{item}}" mode="aspectFill" class="slide-image"/>
+    </swiper-item>
+  </swiper>
+  
+  <!-- 轮播图指示器 -->
+  <view class="indicator">{{product.currentIndex + 1}}/{{product.images.length}}</view>
+  
+  <!-- 商品基本信息 -->
+  <view class="product-info">
+    <view class="price-section">
+      <view class="current-price">¥ {{product.price}} <view class="special-price">特享价</view></view>
+      <view class="original-price">原价: ¥{{product.originalPrice}}</view>
+      <view class="sales">
+        <view>销量</view>
+        <view>{{product.sales}}</view>
+      </view>
+    </view>
+    <view class="product-name-delivery">
+        <view class="product-name">{{product.name}}</view>
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/share.png" class="shop-icon"></image>
+    </view>
+    <view class="product-spec-delivery">
+      <view class="product-spec">规格: {{product.spec}}</view>
+      <view class="delivery">快递: {{product.delivery}}</view>
+    </view>
+  </view>
+  
+  <!-- 优惠券区域 -->
+  <view class="coupon-section" bindtap="getCoupon">
+    <view class="coupon-item get-coupon" data-id="0">
+      领券
+    </view>
+    <view wx:for="{{product.coupons}}" wx:key="id" class="coupon-item" data-id="{{item.coupon_id}}">
+      {{item.coupon_name}}
+    </view>
+    <view class="coupon-more">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" class="coupon-more-icon"></image>
+    </view>
+  </view>
+  
+  <!-- 评价区域 -->
+  <view class="comment-section" bindtap="viewAllComments">
+    <view class="comment-title">评价({{product.commentCount}})</view>
+    <view class="view-all">
+      查看全部 <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" class="coupon-more-icon"></image>
+    </view>
+  </view>
+  
+  <!-- 详情介绍 -->
+  <view class="detail-title" bindtap="viewDetail">
+    <text>详情介绍</text>
+    <view class="detail-content">
+      <image src="{{product.productContent}}" class="detail-image"></image>
+    </view>
+  </view>
+  
+  <!-- 底部操作栏 -->
+  <view class="footer">
+    <view class="footer-buttons">
+      <view class="action-button" bindtap="goToShop">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/dianpu.png" class="action-icon"></image>
+        <text>店铺</text>
+      </view>
+      <view class="action-button" bindtap="goToCart">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gouwuche.png" class="action-icon"></image>
+        <text>购物车</text>
+        <view class="cart-badge" wx:if="{{cartCount > 0}}">{{cartCount}}</view>
+      </view>
+      <view class="action-button" bindtap="contactService">
+        <!-- <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/kefu.png" class="action-icon"></image>
+        <text>客服</text> -->
+        <button open-type="contact" class="custom-contact">
+          <view class="title-function-container-middle-service-button">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/kefu.png" mode="widthFix"></image>
+            <text>客服</text>
+          </view>
+        </button>
+      </view>
+    </view>
+    <view class="buy-buttons">
+      <button class="add-cart-btn" bindtap="addToCart">加入购物车</button>
+      <button class="buy-now-btn" bindtap="buyNow">立即购买</button>
+    </view>
+  </view>
+</view>
+
+<view class="coupon-popup-mask" wx:if="{{showCouponPopup}}" bindtap="closeCouponPopup"></view>
+<view class="coupon-popup" wx:if="{{showCouponPopup}}">
+  <view class="coupon-popup-header">
+    <text class="coupon-popup-title">优惠券</text>
+    <view class="coupon-popup-close" bindtap="closeCouponPopup">
+      <image src="/images/home/close.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="coupon-popup-content">
+    <view wx:for="{{couponList}}" wx:key="coupon_id" class="coupon-popup-item">
+      <view class="coupon-popup-left">
+        <view class="coupon-popup-amount">
+          <text class="coupon-popup-currency">¥</text>
+          <text class="coupon-popup-number">{{item.coupon_price}}</text>
+        </view>
+        <view class="coupon-popup-condition">满¥{{item.available_min_price}}可使用</view>
+      </view>
+      <view class="coupon-popup-divider"></view>
+      <view class="coupon-popup-right">
+        <view class="coupon-popup-desc">{{item.coupon_name}}</view>
+        <view class="coupon-popup-expiry">{{item.deadline}}前有效</view>
+      </view>
+      <view class="coupon-popup-use-button" bindtap="catchCoupon" data-id="{{item.coupon_id}}" wx:if="{{item.is_received == 0}}">领取</view>
+      <view class="coupon-popup-use-button" bindtap="useCoupon" data-id="{{item.coupon_id}}" wx:if="{{item.is_received == 1}}">使用</view>
+      <view class="coupon-popup-use-button coupon-popup-use-button-disabled" data-id="{{item.coupon_id}}" wx:if="{{item.is_received == 2}}">已使用</view>
+    </view>
+  </view>
+</view>

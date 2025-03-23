@@ -1,0 +1,105 @@
+<view class="container">
+  <!-- Header -->
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateToProfile">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">个人资料</view>
+  </view> -->
+  
+  <!-- Profile Information List -->
+  <view class="profile-list">
+    <!-- Avatar -->
+    <view class="profile-item" bindtap="changeAvatar">
+      <view class="item-label">头像</view>
+      <view class="item-content avatar-content">
+        <image src="{{userInfo.avatar}}" mode="aspectFill"></image>
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Nickname -->
+    <view class="profile-item" bindtap="editNickname">
+      <view class="item-label">昵称</view>
+      <view class="item-content">
+        <text class="item-value">{{userInfo.nickname}}</text>
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Gender -->
+    <view class="profile-item" bindtap="selectGender">
+      <view class="item-label">性别</view>
+      <view class="item-content">
+        <text class="item-value">{{userInfo.gender > 2 ? '未知' : (userInfo.gender == 1 ? '男' : '女')}}</text>
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Birth Date -->
+    <view class="profile-item">
+      <view class="item-label">出生日期</view>
+      <view class="item-content">
+        <picker mode="date" value="{{userInfo.birthDate || '2000-01-01'}}" start="1900-01-01" end="2023-12-31" bindchange="onBirthDateChange">
+          <view class="picker-value">
+            {{userInfo.birthday || '选择出生日期'}}
+          </view>
+        </picker>
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    
+    <!-- Member Level -->
+    <view class="profile-item">
+      <view class="item-label">会员等级</view>
+      <view class="item-content">
+        <text class="item-value" wx:if="{{userInfo.role == 1}}">普通会员</text>
+        <text class="item-value" wx:elif="{{userInfo.role == 2}}">高级会员</text>
+        <text class="item-value" wx:elif="{{userInfo.role == 3}}">初级农场主</text>
+        <text class="item-value" wx:elif="{{userInfo.role == 4}}">高级农场主</text>
+        <text class="item-value" wx:elif="{{userInfo.role == 5}}">资深农场主</text>
+        <text class="item-value" wx:else>普通用户</text>
+        <!-- <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image> -->
+      </view>
+    </view>
+    
+    <!-- Shipping Address -->
+    <view class="profile-item" bindtap="manageAddress">
+      <view class="item-label">收货地址</view>
+      <view class="item-content">
+        <text class="item-value">{{userInfo.address}}</text>
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Phone Number -->
+    <view class="profile-item" bindtap="bindPhone">
+      <view class="item-label">绑定手机号</view>
+      <view class="item-content">
+        <text class="item-value">{{userInfo.phone}}</text>
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Real Name Verification -->
+    <view class="profile-item" bindtap="verifyRealName">
+      <view class="item-label">实名认证信息</view>
+      <view class="item-content">
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+    
+    <!-- Account Security -->
+    <view class="profile-item" bindtap="manageAccountSecurity">
+      <view class="item-label">账户与安全</view>
+      <view class="item-content">
+        <image class="arrow-icon" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/right.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  
+  <!-- Logout Button -->
+  <view class="logout-button" bindtap="logout">
+    退出登录
+  </view>
+</view> 

@@ -1,0 +1,145 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <!-- <view class="title"><text>鸵小妥</text></view> -->
+    <view class="title-img">
+      <swiper 
+        autoplay="true" 
+        interval="3000" 
+        duration="500" 
+        circular="true" 
+        indicator-dots="true"
+        wx:if="{{!loading && banners.length > 0}}"
+      >
+        <swiper-item wx:for="{{banners}}" wx:key="id">
+          <image 
+            src="{{item.img}}" 
+            mode="widthFix" 
+            data-banner="{{item}}"
+          ></image>
+        </swiper-item>
+      </swiper>
+      
+      <!-- 加载中状态 -->
+      <view class="banner-loading" wx:if="{{loading}}">
+        <view class="loading-indicator"></view>
+      </view>
+      
+      <!-- 无数据状态 -->
+      <view class="no-banners" wx:if="{{!loading && banners.length === 0}}">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="aspectFit"></image>
+        <text>暂无 Banner 数据</text>
+      </view>
+    </view>
+    <view class="title-img-tips-container">
+      <view class="title-img-laba">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/laba.png" mode="widthFix"></image>
+      </view>
+      <view class="title-img-text">
+        <text>高品质鸵小妥-鸵鸟肉和蛋每天限量20份，贵宾优先~</text>
+      </view>
+    </view>
+    <view class="title-img-monitor-container">
+				<view class="title-img-monitor-container-monitor-container" bindtap="navigateToMonitor">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/monitor.jpg" mode="widthFix"></image>
+          <view class="title-img-monitor-container-monitor-container-text">
+            <text>实时监控</text>
+            <text class="title-img-monitor-container-monitor-container-text-tips">REAL-TIME MONITORING</text>
+          </view>
+        </view>
+        <view class="title-img-monitor-container-eating-container">
+					<view class="title-img-monitor-container-eating-container-eating-container" bindtap="navigateToNews">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/eating.jpg" mode="widthFix"></image>
+            <view class="title-img-monitor-container-eating-container-eating-container-text">
+              <text>鸵小妥要闻</text>
+              <text class="title-img-monitor-container-eating-container-eating-container-text-tips">TUTUO FARMS</text>
+            </view>
+          </view>
+					<view class="title-img-monitor-container-eating-container-movie-container" bindtap="navigateToMovie">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/movie.jpg" mode="widthFix"></image>
+            <view class="title-img-monitor-container-eating-container-movie-container-text">
+              <text>鸵小陪你看电影</text>
+              <text class="title-img-monitor-container-eating-container-movie-container-text-tips">TUTUO FARMS</text>
+            </view>
+          </view>
+				</view>
+    </view>
+    <view class="title-img-adopting-container">
+      <view class="title-adopting-img-laba">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/adopting-icon.png" mode="widthFix"></image>
+      </view>
+      <view class="title-adopting-text">
+        <text class="title-adopting-text-title">鸵小妥认养</text>
+        <text class="title-adopting-text-title-tips">TUOTUO ADOPTING</text>
+      </view>
+    </view>
+    <view class="adopting-img" bindtap="navigateToAdoption">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/adopting.png" mode="widthFix"></image>
+    </view>
+    <view class="title-img-distributed-container">
+      <view class="title-distributed-img-laba">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/distributed-icon.png" mode="widthFix"></image>
+      </view>
+      <view class="title-distributed-text">
+        <text class="title-distributed-text-title">分布式农场</text>
+        <text class="title-distributed-text-title-tips">DISTRIBUTED FARMS</text>
+      </view>
+    </view>
+    <view class="distributed-img" bindtap="navigateToDistribute">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/distributed.png" mode="widthFix"></image>
+    </view>
+    <view class="title-img-recommendations-container">
+      <view class="title-recommendations-img-laba">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/recommendations.png" mode="widthFix"></image>
+      </view>
+      <view class="title-recommendations-text">
+        <text class="title-recommendations-text-title">商品推荐</text>
+        <text class="title-recommendations-text-title-tips">Product recommendations</text>
+      </view>
+    </view>
+    <view class="recommendations-list">
+      <block wx:for="{{recommendedProducts}}" wx:key="index">
+        <view class="recommendations-list-item">
+          <view class="recommendations-list-item-left">
+            <image src="{{item.left.img}}" mode="widthFix" bindtap="navigateToProductDetail" data-id="{{item.left.id}}"></image>
+            <text class="recommendations-list-item-left-title" bindtap="navigateToProductDetail" data-id="{{item.left.id}}">{{item.left.name}}</text>
+            <view class="recommendations-list-item-left-price">
+              <text class="recommendations-list-item-left-price-title">￥{{item.left.price}}</text>
+              <image wx:if="{{item.left.isShowCart}}" 
+                      class="recommendations-list-item-left-price-image" 
+                      src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/buycart.png" 
+                      mode="widthFix"
+                      bindtap="toggleCartControls"
+                      data-id="{{item.left.id}}"></image>
+              <view class="recommendations-list-item-left-count-tips">
+                <text>x{{item.left.quantity}}</text>
+              </view>
+            </view>
+          </view>
+          
+          <view class="recommendations-list-item-right" wx:if="{{item.right}}">
+            <image src="{{item.right.img}}" mode="widthFix" bindtap="navigateToProductDetail" data-id="{{item.right.id}}"></image>
+            <text class="recommendations-list-item-left-title" bindtap="navigateToProductDetail" data-id="{{item.right.id}}">{{item.right.name}}</text>
+            <view class="recommendations-list-item-left-price">
+              <text class="recommendations-list-item-left-price-title">￥{{item.right.price}}</text>
+              <image wx:if="{{item.right.isShowCart}}" 
+                      class="recommendations-list-item-left-price-image" 
+                      src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/buycart.png" 
+                      mode="widthFix"
+                      bindtap="toggleCartControls"
+                      data-id="{{item.right.id}}"></image>
+              <view class="recommendations-list-item-left-count-tips">
+                <text>x{{item.right.quantity}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      
+      <!-- Add a fallback for when there are no recommendations -->
+      <view class="no-recommendations" wx:if="{{recommendedProducts.length === 0}}">
+        <text>暂无推荐产品</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<custom-tabbar></custom-tabbar>

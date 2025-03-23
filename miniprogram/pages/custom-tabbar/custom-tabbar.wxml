@@ -1,0 +1,19 @@
+<cover-view class="tab-bar">
+  <cover-image src="/images/tabbar/tab.png" class="tab-bar-bg"></cover-image>
+  <cover-view 
+    wx:for="{{list}}" 
+    wx:key="index" 
+    class="tab-bar-item {{item.isCenter ? 'center-item' : 'normal-item'}}" 
+    data-path="{{item.pagePath}}" 
+    data-index="{{index}}"
+    data-is-center="{{item.isCenter}}"
+    bindtap="switchTab">
+    <cover-image 
+      class="{{item.isCenter ? 'center-icon' : 'normal-icon'}}" 
+      src="{{selected === index ? item.selectedIconPath : item.iconPath}}" mode="widthFix">
+    </cover-image>
+    <cover-view
+      wx:if="{{!item.isCenter}}" 
+      style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</cover-view>
+  </cover-view>
+</cover-view>

@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <image class="search-icon" src="/images/icons/search.png"></image>
+    <input type="text" class="search-input" placeholder="搜索姓名/手机号" confirm-type="search" bindinput="onSearchInput"/>
+    <image class="scan-icon" src="/images/icons/address-manage.png"></image>
+  </view>
+  
+  <!-- 地址列表 -->
+  <view class="address-list">
+    <view wx:for="{{addressList}}" wx:key="id" bindtap="{{isSelectMode ? 'selectAddress' : ''}}" data-id="{{item.id}}" class="address-item {{isSelectMode && item.id == addressId ? 'selected' : ''}}">
+      <view class="address-info">
+        <view class="address-header">
+          <text class="address-name">{{item.name}}</text>
+          <text class="address-phone">{{item.phone}}</text>
+          <text class="address-tag" wx:if="{{item.isDefault}}">默认</text>
+        </view>
+        <view class="address-detail">
+          <text>{{item.province}} {{item.city}} {{item.district}} {{item.street}} {{item.detail}}</text>
+        </view>
+      </view>
+      <view class="address-edit" catchtap="editAddress" data-id="{{item.id}}">
+        <image class="edit-icon" src="/images/icons/edit.png"></image>
+        <view class="address-action-btn delete-btn" catchtap="deleteAddress" data-id="{{item.id}}">删除</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{addressList.length === 0}}">
+    <text>暂无收货地址</text>
+  </view>
+  
+  <!-- 底部添加按钮 -->
+  <view class="add-btn" bindtap="addNewAddress">新增地址</view>
+</view> 

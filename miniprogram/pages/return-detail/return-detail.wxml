@@ -1,0 +1,93 @@
+<view class="container">
+  <!-- 退款状态 -->
+  <view class="status-section">
+    <view class="status-title">退款处理中</view>
+    <view class="status-desc">您的退款申请已提交，等待商家处理</view>
+    
+    <!-- 退款进度条 -->
+    <view class="progress-timeline">
+      <view class="progress-line"></view>
+      
+      <view class="timeline-item">
+        <view class="timeline-dot">
+          <image wx:if="{{returnDetail.status === 0}}" class="timeline-icon" src="/images/icons/success.png" mode="aspectFit"></image>
+        </view>
+        <view class="timeline-text">申请退款</view>
+        <view class="timeline-date">{{returnDetail.apply_time}}</view>
+      </view>
+      
+      <view class="timeline-item">
+        <view class="timeline-dot">
+        
+        </view>
+        <view class="timeline-text">申请通过</view>
+        <view class="timeline-date">{{returnDetail.process_time || '--'}}</view>
+      </view>
+      
+      <view class="timeline-item">
+        <view class="timeline-dot">
+          <image wx:if="{{returnDetail.status === 1}}" class="timeline-icon" src="/images/icons/success.png" mode="aspectFit"></image>
+        </view>
+        <view class="timeline-text">退款成功</view>
+        <view class="timeline-date">{{returnDetail.completion_time || '--'}}</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 退款金额 -->
+  <view class="amount-section">
+    <view class="amount-title-container">
+      <view class="amount-title">退款总金额</view>
+      <view class="amount-value">¥<text>{{returnDetail.refund_amount}}</text></view>
+    </view>
+    <view class="amount-subtitle">请核对退款金额</view>
+  </view>
+  
+  <!-- 退款信息 -->
+  <view class="info-section">
+    <view class="section-title">退款信息</view>
+    
+    <!-- 商品信息 -->
+    <view class="product-info">
+      <image class="product-image" src="{{returnDetail.header_img}}" mode="aspectFill"></image>
+      <view class="product-details">
+        <view class="product-name">{{returnDetail.product_name}}</view>
+        <view class="product-quantity">共{{returnDetail.quantity}}件</view>
+      </view>
+    </view>
+    
+    <!-- 详细信息 -->
+    <view class="info-item">
+      <text class="info-label">退款编号</text>
+      <view class="info-value-with-action">
+        <text class="info-value">{{returnDetail.refund_no}}</text>
+        <text class="copy-btn" bindtap="copyReturnId">复制</text>
+      </view>
+    </view>
+    
+    <view class="info-item">
+      <text class="info-label">服务类型</text>
+      <text class="info-value">{{returnDetail.refund_type === 1 ? '仅退款' : '退货退款'}}</text>
+    </view>
+    
+    <view class="info-item">
+      <text class="info-label">退款原因</text>
+      <text class="info-value">{{returnDetail.refund_reason}}</text>
+    </view>
+    
+    <view class="info-item">
+      <text class="info-label">申请金额</text>
+      <text class="info-value">¥ {{returnDetail.refund_amount}}</text>
+    </view>
+    
+    <view class="info-item">
+      <text class="info-label">申请时间</text>
+      <text class="info-value">{{returnDetail.apply_time}}</text>
+    </view>
+    
+    <view class="info-item">
+      <text class="info-label">原因描述</text>
+      <text class="info-value">{{returnDetail.refund_reason || '无'}}</text>
+    </view>
+  </view>
+</view> 

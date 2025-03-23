@@ -1,0 +1,130 @@
+page {
+  background-color: #F7F7F2;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 88rpx;
+  padding: 60rpx 30rpx 20rpx;
+  background: #F7F7F2;
+  position: relative;
+}
+
+.back-icon {
+  width: 31.67rpx;
+  height: 31.67rpx;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon image {
+  width: 41.67rpx;
+  height: 41.67rpx;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  right: 0;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #1C1C1C;
+}
+
+/* Profile List */
+.profile-list {
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  overflow: hidden;
+  width: 100%;
+}
+
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 28rpx;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+
+.profile-item:last-child {
+  border-bottom: none;
+}
+
+.item-label {
+  font-size: 28rpx;
+  color: #1C1C1C;
+  font-weight: 400;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+}
+
+.item-value {
+  font-size: 28rpx;
+  color: #333333;
+  margin-right: 10rpx;
+}
+
+.placeholder {
+  color: #CCCCCC;
+}
+
+.arrow-icon {
+  width: 16rpx;
+  height: 26rpx;
+}
+
+.avatar-content image:first-child {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+/* Logout Button */
+.logout-button {
+  position: absolute;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #6D8F56;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 44rpx;
+}
+
+.picker-value {
+  flex: 1;
+  text-align: right;
+  color: #333;
+  padding-right: 20rpx;
+} 

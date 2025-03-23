@@ -1,0 +1,112 @@
+/* custom-tabbar.wxss */
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-icon image {
+  width: 60.42rpx;
+  height: 60.42rpx;
+}
+
+.tab-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125rpx;
+  line-height: 16.75rpx;
+  font-size: 19rpx; /* Ensure font size is set */
+  color: #8a8a8a; /* Default color */
+}
+
+.tab-item.selected .tab-text {
+  color: #4CAF50; /* Selected color */
+}
+
+.tab-bar {
+  position: fixed;
+  bottom: -10rpx;
+  left: 0rpx;
+  right: 0rpx;
+  height: 180rpx;
+  background: transparent;
+  border: none;
+  display: flex;
+  z-index: 999;
+}
+
+.tab-bar-bg {
+  margin-top: 70rpx;
+  height: 100rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.tab-bar-item {
+  margin-top: 65rpx;
+  height: 100rpx;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Style for the regular tab icons */
+.normal-icon {
+  width: 58rpx;
+  height: 58rpx;
+  margin-bottom: 10rpx;
+}
+
+/* Style for the center tab item with inward curve */
+.center-item {
+  position: relative;
+  margin-top: 10rpx;
+  height: 160rpx;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Style for the center icon */
+.center-icon {
+  position: fixed;
+  width: 158rpx;
+  height: 158rpx;
+  bottom: 25rpx;
+  border-radius: 50%;
+}
+
+/* Remove or modify the cutout since we're using curves instead */
+.tab-bar::before {
+  display: none;
+}
+
+.normal-item {
+  background-color: transparent;
+}
+.normal-item cover-image {
+  width: 27px;
+  height: 27px;
+}
+
+.normal-item cover-view {
+  font-size: 20rpx;
+}

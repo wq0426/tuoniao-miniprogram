@@ -1,0 +1,47 @@
+<view class="container">
+  <view class="title">
+    <view class="title-left" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title-right">
+      <text></text>
+    </view>
+  </view>
+  
+  <!-- Eggs Image -->
+  <view class="egg-image">
+    <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/category/dan.jpg"></image>
+  </view>
+  
+  <!-- Price Section -->
+  <view class="price-section">
+    <view class="price-title">平台回收价</view>
+    <view class="price-amount">¥<text>100</text></view>
+    
+    <!-- Action Buttons -->
+    <view class="action-buttons">
+      <button class="cancel-btn" bindtap="cancel">取消</button>
+      <button class="confirm-btn" bindtap="confirm">确定</button>
+    </view>
+  </view>
+  
+  <!-- Rules Section -->
+  <view class="rules-section">
+    <view class="rules-title">平台回收规则:</view>
+    
+    <view class="rule-item">
+      <view class="rule-title">1、7天内平台回购:</view>
+      <view class="rule-content">从您实际获得鸵鸟蛋之日起7天内，如果您决定将蛋卖给平台，我们将以100元/颗的价格进行回收。</view>
+    </view>
+    
+    <view class="rule-item">
+      <view class="rule-title">2、30天未售出自动回收:</view>
+      <view class="rule-content">如果您选择在平台自行售卖鸵鸟蛋，但自获得鸵鸟蛋之日起超过30天仍未售出，为了确保食品的新鲜与品质，平台将对这些蛋进行无价回收。我们希望您能把握这段时间，尽快完成售卖。</view>
+    </view>
+    
+    <view class="rule-item">
+      <view class="rule-title">3、温馨提示:</view>
+      <view class="rule-content">我们理解您可能需要一些时间来安排售卖，但为了保证鸵鸟蛋的新鲜度，建议您尽早进行售卖。如有任何疑问或需要帮助，欢迎随时联系平台客服。</view>
+    </view>
+  </view>
+</view> 

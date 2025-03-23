@@ -1,0 +1,152 @@
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="home-container">
+    <view class="title">
+        <view class="title-left">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home.png" bindtap="navigateToHome" mode="widthFix"></image>
+        </view>
+        <view class="title-right">
+            <text>个人中心</text>
+        </view>
+    </view>
+    <view class="title-container">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/profile-title.png" mode="widthFix"></image>
+    </view>
+    <view class="title-info-container">
+      <view class="title-info-container-left">
+        <image src="{{userInfo.avatar || '/images/default-avatar.png'}}" mode="widthFix"></image>
+      </view>
+      <view class="title-info-container-middle">
+        <view class="title-info-container-middle-top">
+          <view class="title-info-container-middle-top-left">{{userInfo.nickname || '未登录'}}</view>
+          <view class="title-info-container-middle-top-right">
+            <text wx:if="{{userInfo.role == 1}}">普通会员</text>
+            <text wx:elif="{{userInfo.role == 2}}">高级会员</text>
+            <text wx:elif="{{userInfo.role == 3}}">初级农场主</text>
+            <text wx:elif="{{userInfo.role == 4}}">高级农场主</text>
+            <text wx:elif="{{userInfo.role == 5}}">资深农场主</text>
+            <text wx:else>普通用户</text>
+          </view>
+        </view>
+        <view class="title-info-container-middle-middle">
+          <view class="title-info-container-middle-middle-left">{{userInfo.point || 0}}/{{userInfo.step_max_point || 0}}</view>
+          <view class="title-info-container-middle-middle-right" bindtap="navigateToRights">查看权益</view>
+        </view>
+        <view class="title-info-container-middle-bottom">
+          <view class="title-info-container-middle-bottom-bg">
+          </view>
+          <view class="title-info-container-middle-bottom-value" style="width: {{progressPercentage}}%;">
+          </view>
+        </view>
+      </view>
+      <view class="title-info-container-right">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/code.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="title-asset-container">
+      <view class="title-asset-container-top"> 
+        <text>我的资产</text>
+      </view>
+      <view class="title-asset-container-bottom">
+        <view class="title-asset-container-bottom-left" bindtap="navigateToCouponList">
+          <view class="title-asset-container-bottom-left-top">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/yuan.png" mode="widthFix"></image>
+            <text>优惠券</text>
+          </view>
+          <view class="title-asset-container-bottom-left-bottom">
+            <view class="title-asset-container-bottom-left-bottom-left">{{userInfo.user_asset.coupon_count || 0}}</view>
+            <text>张可使用</text>
+          </view>
+        </view>
+        <view class="title-asset-container-bottom-middle" bindtap="navigateToBalance">
+          <view class="title-asset-container-bottom-left-top">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/yue.png" mode="widthFix"></image>
+            <text>余额</text>
+          </view>
+          <view class="title-asset-container-bottom-left-bottom">
+            <view class="title-asset-container-bottom-left-bottom-left">¥{{userInfo.user_asset.balance || 0}}</view>
+            <text>可用余额</text>
+          </view>
+        </view>
+        <view class="title-asset-container-bottom-right" bindtap="navigateToPointsExchange">
+          <view class="title-asset-container-bottom-left-top">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/jifen.png" mode="widthFix"></image>
+            <text>积分</text>
+          </view>
+          <view class="title-asset-container-bottom-left-bottom">
+            <view class="title-asset-container-bottom-left-bottom-left">{{userInfo.user_asset.points || 0}}</view>
+            <text>分可使用</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="title-order-container">
+      <view class="title-order-container-top">
+        <text>我的订单</text>
+      </view>
+      <view class="title-order-container-bottom">
+        <view class="title-order-container-bottom-holding-pay" bindtap="navigateToOrders" data-type="1">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/holding-pay.png" mode="widthFix"></image>
+          <text>待支付</text>
+        </view>
+        <view class="title-order-container-bottom-holding-send" bindtap="navigateToOrders" data-type="2">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/holding-send.png" mode="widthFix"></image>
+          <text>待发货</text>
+        </view>
+        <view class="title-order-container-bottom-holding-receive" bindtap="navigateToOrders" data-type="3">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/holding-receive.png" mode="widthFix"></image>
+          <text>待收货</text>
+        </view>
+        <view class="title-order-container-bottom-holding-complete" bindtap="navigateToMyReviews" data-type="1">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/holding-complete.png" mode="widthFix"></image>
+          <text>待评价</text>
+        </view>
+        <view class="title-order-container-bottom-holding-return" bindtap="navigateToReturns" data-type="0">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/holding-return.png" mode="widthFix"></image>
+          <text>退换货</text>
+        </view>
+      </view>
+    </view>
+    <view class="title-function-container">
+      <view class="title-function-container-top">
+        <text>我的功能</text>
+      </view>
+      <view class="title-function-container-middle">
+        <view class="title-function-container-middle-income" bindtap="navigateToIncome">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/function-income.png" mode="widthFix"></image>
+          <text>查看收益</text>
+        </view>
+        <view class="title-function-container-middle-address" bindtap="navigateToAddress">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/function-address.png" mode="widthFix"></image>
+          <text>收货地址</text>
+        </view>
+        <view class="title-function-container-middle-review" bindtap="navigateToMyReviews" data-type="2">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/function-review.png" mode="widthFix"></image>
+          <text>我的评价</text>
+        </view>
+        <!-- <view class="title-function-container-middle-service">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/function-service.png" mode="widthFix"></image>
+          <text>联系客服</text>
+        </view> -->
+        <view class="title-function-container-middle-service">
+          <button open-type="contact" class="custom-contact">
+            <view class="title-function-container-middle-service-button">
+              <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/function-service.png" mode="widthFix"></image>
+              <text>联系客服</text>
+            </view>
+          </button>
+        </view>
+        <view class="title-function-container-middle-settings" bindtap="navigateToProfileDetail">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/function-settings.png" mode="widthFix"></image>
+          <text>设置中心</text>
+        </view>
+      </view>
+      <view class="title-function-container-bottom">
+        <view class="title-function-container-bottom-about-us" bindtap="navigateToAboutUs">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/about-us.png"></image>
+          <text>关于我们</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<custom-tabbar></custom-tabbar>

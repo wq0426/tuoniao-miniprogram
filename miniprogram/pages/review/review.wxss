@@ -1,0 +1,246 @@
+page {
+  background-color: #F7F7F2;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 30rpx;
+}
+
+.product-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 140rpx;
+  min-height: 100%;
+}
+
+/* 商品信息 */
+.product-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+}
+
+.product-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.product-title {
+width: 88px;
+height: 18px;
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 18px;
+color: #1C1C1C;
+line-height: 31px;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+/* 总体评分 */
+.rating-overall {
+  background-color: #FFFFFF;
+  margin-top: 2rpx;
+}
+
+.stars-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stars {
+  display: flex;
+  flex-direction: row;
+}
+
+.star-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+}
+
+.rating-text {
+  margin-left: 20rpx;
+  font-size: 28rpx;
+  color: #F9AE49;
+}
+
+/* 评分项目 */
+.rating-items {
+  margin-top: 20rpx;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+}
+
+.rating-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.rating-item:last-child {
+  margin-bottom: 0;
+}
+
+.rating-item-label {
+  width: 180rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.rating-item-stars {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.rating-item-stars .star-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.rating-item-text {
+  width: 120rpx;
+  text-align: right;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+/* 评价内容 */
+.review-content {
+  margin-top: 20rpx;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+}
+
+.review-textarea {
+  width: 100%;
+  height: 200rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+/* 上传图片/视频 */
+.upload-section {
+  margin-top: 20rpx;
+  padding: 30rpx;
+  background-color: #FFFFFF;
+}
+
+.upload-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.upload-item {
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.upload-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+
+.upload-delete {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: 24rpx;
+}
+
+.upload-button {
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx dashed #DDDDDD;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon image {
+  width: 60rpx;
+  height: 60rpx;
+  opacity: 0.5;
+}
+
+/* 匿名评价 */
+.anonymous-option {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30rpx;
+  padding: 0 30rpx;
+}
+
+.checkbox {
+  width: 36rpx;
+  height: 36rpx;
+  border: 1rpx solid #DDDDDD;
+  border-radius: 50%;
+  margin-right: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox.selected {
+  background-color: #6D8F56;
+  border-color: #6D8F56;
+}
+
+.check-circle {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  opacity: 0;
+}
+
+.checkbox.selected .check-circle {
+  opacity: 1;
+}
+
+.anonymous-option text {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+/* 提交按钮 */
+.submit-button {
+  margin: 50rpx 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #6D8F56;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  border-radius: 44rpx;
+} 

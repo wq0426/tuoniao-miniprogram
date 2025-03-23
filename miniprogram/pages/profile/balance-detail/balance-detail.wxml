@@ -1,0 +1,66 @@
+<view class="container">
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">余额明细</view>
+  </view> -->
+  
+  <!-- 标签页切换 -->
+  <view class="tabs">
+    <view class="tab {{currentTab == 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">
+      余额明细
+      <view class="tab-line" wx:if="{{currentTab == 0}}"></view>
+    </view>
+    <view class="tab {{currentTab == 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">
+      提现记录
+      <view class="tab-line" wx:if="{{currentTab == 1}}"></view>
+    </view>
+  </view>
+  
+  <!-- 余额明细内容 -->
+  <view class="records-list" wx:if="{{currentTab == 0}}">
+    <view class="record-item" wx:for="{{balanceRecords}}" wx:key="id">
+      <view class="record-middle">
+        <view class="record-title">{{item.title}}</view>
+        <view class="record-time">{{item.created_at}}</view>
+      </view>
+      <view class="record-right">
+        <view class="record-amount">{{item.action_num < 0 ? '' : '+'}}{{item.action_num}}</view>
+        <view class="record-balance">余额 ¥{{item.left_num}}</view>
+      </view>
+    </view>
+    
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{balanceRecords.length === 0 && !loading}}">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/balance-empty.png" mode="aspectFit"></image>
+      <text>暂无余额明细</text>
+    </view>
+  </view>
+  
+  <!-- 提现记录内容 -->
+  <view class="records-list" wx:if="{{currentTab == 1}}">
+    <view class="withdraw-item" wx:for="{{withdrawRecords}}" wx:key="id">
+      <view class="withdraw-left">
+        <view class="record-title">{{item.title}}</view>
+        <view class="record-time">{{item.created_at}}</view>
+      </view>
+      <view class="withdraw-right">
+        <view class="withdraw-time">-¥{{item.amount}}</view>
+        <view class="withdraw-status">{{item.status_text}}</view>
+      </view>
+    </view>
+    
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{withdrawRecords.length === 0 && !loading}}">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/profile/withdraw-empty.png" mode="aspectFit"></image>
+      <text>暂无提现记录</text>
+    </view>
+  </view>
+  
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text>加载中...</text>
+  </view>
+</view> 

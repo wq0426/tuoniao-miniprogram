@@ -1,0 +1,536 @@
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F7F7F2;
+}
+
+.scrollarea {
+  position: relative;
+  height: 100vh;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 750rpx;
+  position: relative;
+  padding-bottom: 120rpx;
+}
+
+.title {
+  width: 750rpx;
+  height: 115rpx;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title-left {
+  height: 115rpx;
+  margin-left: 41.67rpx;
+  margin-top: 100.38rpx;
+}
+
+.title-left image {
+  width: 31.25rpx;
+  height: 31.25rpx;
+}
+
+.title-right {
+  width: 677rpx;
+  height: 115rpx;
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 31rpx;
+  color: #1C1C1C;
+  line-height: 44rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+  margin-top: 93.38rpx;
+  margin-right: 31.25rpx;
+}
+
+/* Address Container */
+.address-container {
+  width: 710rpx;
+  height: 106rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.address-icon {
+  margin-right: 15rpx;
+  width: 31.3rpx;
+  height: 31.3rpx;
+  border-radius: 50%;
+  background-color: #ADC05A;
+  margin-left: 28rpx;
+  margin-bottom: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.address-icon image {
+  width: 16rpx;
+  height: 16rpx;
+}
+
+.address-details {
+  flex: 1;
+}
+
+.address-text {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 25rpx;
+color: #1C1C1C;
+line-height: 35rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.address-person {
+font-family: Source Han Sans CN, Source Han Sans CN;
+font-weight: 400;
+font-size: 19rpx;
+color: #7F7F7F;
+line-height: 26rpx;
+text-align: left;
+font-style: normal;
+text-transform: none;
+}
+
+.address-arrow image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 20rpx;
+}
+
+/* Checkout Items Container */
+.checkout-items-container {
+  width: 710rpx;
+  margin: 10rpx auto;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  padding-bottom: 15rpx;
+}
+
+.store-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+
+.store-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+
+.store-name {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 26rpx;
+  color: #1C1C1C;
+}
+
+/* Checkout Item */
+.checkout-item {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #F7F7F2;
+}
+
+.item-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+}
+
+.item-details {
+  flex: 1;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-name {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #1C1C1C;
+  line-height: 34rpx;
+}
+
+.item-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 70rpx;
+}
+
+.item-price {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 28rpx;
+  color: #1C1C1C;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.item-quantity text {
+  margin: 0 10rpx;
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #1C1C1C;
+}
+
+.quantity-control {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+/* Price Breakdown */
+.price-breakdown {
+  padding: 15rpx 20rpx;
+  border-top: 1rpx solid #F7F7F2;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+}
+
+.price-label {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #1C1C1C;
+}
+
+.price-value {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #1C1C1C;
+}
+
+.discount {
+  color: #FF6B6B;
+}
+
+/* Notes Container */
+.notes-container {
+  width: 688rpx;
+  margin-top: 65rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notes-label {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #1C1C1C;
+  margin-right: 20rpx;
+  min-width: 60rpx;
+}
+
+.notes-input-container {
+  width: 258rpx;
+  display: flex;
+  align-items: center;
+}
+
+.notes-placeholder {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 24rpx;
+  color: #BFBFBF;
+}
+
+.notes-arrow image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+/* Checkout Bottom */
+.checkout-bottom {
+  position: fixed;
+  bottom: 153rpx;
+  width: 750rpx;
+  height: 100rpx;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0rpx -2rpx 5rpx rgba(0, 0, 0, 0.05);
+}
+
+.checkout-total {
+  display: flex;
+  align-items: center;
+  margin-left: 41.67rpx;
+}
+
+.total-label {
+  width:80rpx;
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 26rpx;
+  color: #1C1C1C;
+}
+
+.total-amount {
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 500;
+  font-size: 30rpx;
+  color: #F9AE49;
+}
+
+.checkout-button {
+  width: 197rpx;
+  height: 58rpx;
+  margin-left: 290rpx;
+  background: #ADC05A;
+  border-radius: 29rpx 29rpx 29rpx 29rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Source Han Sans CN, Source Han Sans CN;
+  font-weight: 400;
+  font-size: 25rpx;
+  color: #FFFFFF;
+  line-height: 35rpx;
+  text-align: center;
+  font-style: normal;
+  text-transform: none;
+}
+
+button::after {
+  border: none;
+}
+
+/* 支付弹窗样式 */
+.payment-modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.payment-modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -500rpx;
+  background-color: #FFFFFF;
+  z-index: 1001;
+  border-radius: 24rpx 24rpx 0 0;
+  transition: all 0.3s ease;
+  padding: 40rpx 30rpx;
+}
+
+.payment-modal-show {
+  bottom: 0;
+}
+
+.payment-modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.payment-amount {
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.payment-close {
+  position: absolute;
+  right: 35rpx;
+  padding: 10rpx;
+}
+
+.payment-close image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.payment-methods {
+  margin-bottom: 40rpx;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #EFEFEF;
+}
+
+.payment-method.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.payment-method:last-child {
+  border-bottom: none;
+}
+
+.payment-method-icon {
+  margin-right: 20rpx;
+}
+
+.payment-method-icon image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.payment-method-name {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.payment-method-check {
+  width: 22rpx;
+  height: 22rpx;
+  display: flex;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #ADC05A;
+}
+
+.payment-method-check.no-selected {
+  border: 1rpx solid #1C1C1C;
+}
+
+.payment-method-check.selected {
+  border: 1rpx solid #F9AE49;
+}
+
+.payment-method-check image {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: #F9AE49;
+}
+
+.payment-method.selected {
+}
+
+.payment-confirm-button {
+  width: 100%;
+  height: 88rpx;
+  background-color: #739F58;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 44rpx;
+  margin-top: 40rpx;
+} 
+
+/* 添加确认弹窗样式 */
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+}
+
+.confirm-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  width: 560rpx;
+  background-color: #F7F7F2;
+  border-radius: 12rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  padding: 50rpx 0;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 80rpx;
+  align-items: center;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+}
+
+.modal-button {
+  width: 180rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.modal-button.cancel {
+background: #B2B2B2;
+border-radius: 25px 25px 25px 25px;
+}
+
+.modal-button.confirm {
+  background: #ADC05A;
+  border-radius: 25px 25px 25px 25px;
+} 
+.action-button.revert {
+  border: 1rpx solid #F9AE49;
+  color: #F9AE49;
+  border-radius: 25px 25px 25px 25px;
+}

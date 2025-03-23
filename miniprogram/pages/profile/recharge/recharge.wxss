@@ -1,0 +1,242 @@
+page {
+  background-color: #F7F7F2;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+/* 头部 */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  height: 88rpx;
+  padding: 60rpx 0 20rpx;
+  position: relative;
+}
+
+.back-icon {
+  width: 31.67rpx;
+  height: 31.67rpx;
+  display: flex;
+  align-items: center;
+}
+
+.back-icon image {
+  width: 41.67rpx;
+  height: 41.67rpx;
+}
+
+.title {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #1C1C1C;
+}
+
+/* 充值金额区域 */
+.recharge-section {
+  margin-top: 40rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 30rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  color: #1C1C1C;
+  margin-bottom: 30rpx;
+}
+
+.amount-input-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #EEEEEE;
+  padding-bottom: 20rpx;
+}
+
+.currency-symbol {
+  font-size: 48rpx;
+  color: #1C1C1C;
+  margin-right: 10rpx;
+}
+
+.amount-input {
+  flex: 1;
+  font-size: 48rpx;
+  height: 70rpx;
+}
+
+/* 快速选择金额 */
+.quick-amount-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+
+.quick-amount-item {
+  width: 156rpx;
+  height: 80rpx;
+  background-color: #FFFFFF;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  color: #1C1C1C;
+  margin-bottom: 20rpx;
+}
+
+/* 充值按钮 */
+.recharge-button {
+  width: 680rpx;
+  height: 62rpx;
+  position: fixed;
+  bottom: 40rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #6D8F56;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 44rpx;
+} 
+
+/* 支付弹窗样式 */
+.payment-modal-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.payment-modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -500rpx;
+  background-color: #FFFFFF;
+  z-index: 1001;
+  border-radius: 24rpx 24rpx 0 0;
+  transition: all 0.3s ease;
+  padding: 40rpx 30rpx;
+}
+
+.payment-modal-show {
+  bottom: 0;
+}
+
+.payment-modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.payment-amount {
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.payment-close {
+  position: absolute;
+  right: 35rpx;
+  padding: 10rpx;
+}
+
+.payment-close image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.payment-methods {
+  margin-bottom: 40rpx;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #EFEFEF;
+}
+
+.payment-method:last-child {
+  border-bottom: none;
+}
+
+.payment-method-icon {
+  margin-right: 20rpx;
+}
+
+.payment-method-icon image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.payment-method-name {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.payment-method-check {
+  width: 22rpx;
+  height: 22rpx;
+  display: flex;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #ADC05A;
+}
+
+.payment-method-check.no-selected {
+  border: 1rpx solid #1C1C1C;
+}
+
+.payment-method-check.selected {
+  border: 1rpx solid #F9AE49;
+}
+
+.payment-method-check image {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: #F9AE49;
+}
+
+.payment-method.selected {
+}
+
+.payment-confirm-button {
+  width: 100%;
+  height: 88rpx;
+  background-color: #739F58;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 44rpx;
+  margin-top: 40rpx;
+} 

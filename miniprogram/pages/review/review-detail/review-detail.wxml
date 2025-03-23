@@ -1,0 +1,51 @@
+<view class="container">
+  <!-- 顶部标签栏 -->
+  <view class="tab-bar">
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-tab="0">
+      全部
+      <view class="tab-line" wx:if="{{currentTab === 0}}"></view>
+    </view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-tab="1">
+      待评价
+      <view class="tab-line" wx:if="{{currentTab === 1}}"></view>
+    </view>
+    <view class="tab-item {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-tab="2">
+      已评价
+      <view class="tab-line" wx:if="{{currentTab === 2}}"></view>
+    </view>
+  </view>
+  
+  <!-- 评价详情 -->
+  <view class="review-detail">
+    <!-- 日期和匿名标签 -->
+    <view class="review-header">
+      <view class="review-date">{{reviewDetail.date}}</view>
+      <view class="review-anonymous" wx:if="{{reviewDetail.isAnonymous}}">匿名</view>
+    </view>
+    
+    <!-- 评价内容 -->
+    <view class="review-content">{{reviewDetail.content}}</view>
+    
+    <!-- 评价图片 -->
+    <view class="review-images" wx:if="{{reviewDetail.images.length > 0}}">
+      <image 
+        wx:for="{{reviewDetail.images}}" 
+        wx:key="index" 
+        src="{{item}}" 
+        mode="aspectFill" 
+        class="review-image"
+        bindtap="previewImage" 
+        data-index="{{index}}"
+      ></image>
+    </view>
+    
+    <!-- 商品信息 -->
+    <view class="product-info">
+      <image class="product-image" src="{{reviewDetail.productImage}}" mode="aspectFill"></image>
+      <view class="product-detail">
+        <view class="product-name">{{reviewDetail.productName}}</view>
+        <view class="product-quantity">数量：共{{reviewDetail.quantity}}件</view>
+      </view>
+    </view>
+  </view>
+</view> 

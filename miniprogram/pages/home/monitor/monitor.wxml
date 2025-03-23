@@ -1,0 +1,49 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-indicator"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 错误状态 -->
+  <view class="error-container" wx:elif="{{error}}">
+    <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="aspectFit"></image>
+    <text class="error-text">{{errorMessage}}</text>
+    <button class="retry-button" bindtap="retryFetch">重试</button>
+  </view>
+  
+  <!-- 内容状态 -->
+  <view class="content-container" wx:else>
+    <view class="image-gallery">
+      <!-- 第一个特色监控（如果有） -->
+      <view class="image-item-1" wx:if="{{monitors.length > 0}}" bindtap="navigateToDetail" data-id="{{monitors[0].id}}">
+        <image class="image-monitor" src="{{monitors[0].img}}" mode="aspectFill" show-menu-by-longpress="false"></image>
+        <view class="image-item-1-text">
+          <text>{{monitors[0].title}}</text>
+        </view>
+        <view class="title-scale">
+          <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/scale.png" mode="widthFix"></image>
+        </view>
+      </view>
+      
+      <!-- 剩余监控（如果有） -->
+      <view class="image-content" wx:if="{{monitors.length > 1}}">
+        <view class="image-item" wx:for="{{monitors}}" wx:key="id" wx:if="{{index > 0}}" bindtap="navigateToDetail" data-id="{{item.id}}">
+          <image class="image" src="{{item.img}}" mode="aspectFill" show-menu-by-longpress="false"></image>
+          <view class="image-item-2-text">
+            <text>{{item.title}}</text>
+          </view>
+          <view class="title-scale">
+            <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/home/scale.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </view>
+      
+      <!-- 无监控数据 -->
+      <view class="no-data-container" wx:if="{{monitors.length === 0}}">
+        <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/cart/blank.png" mode="aspectFit"></image>
+        <text>暂无监控数据</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,66 @@
+<view class="container">
+  <!-- Header -->
+  <!-- <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="https://txtimages.oss-cn-beijing.aliyuncs.com/back.png" mode="widthFix"></image>
+    </view>
+    <view class="title">积分兑换规则</view>
+  </view> -->
+  
+  <!-- Rules Content -->
+  <view class="rules-content">
+    <view class="rules-title">积分兑换规则</view>
+    
+    <view class="rule-item">
+      <text class="rule-number">①</text>
+      <text class="rule-text">30积分——20元优惠券（满100元可用）</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">②</text>
+      <text class="rule-text">60积分——35元优惠券（满100元可用）</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">③</text>
+      <text class="rule-text">150积分——65元优惠券（满200元可用）</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">④</text>
+      <text class="rule-text">300积分——100元优惠券（满400元可用）</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">⑤</text>
+      <text class="rule-text">500积分——166元优惠券（满600元可用）</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">⑥</text>
+      <text class="rule-text">600积分——鸵鸟排骨兑换券</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">⑦</text>
+      <text class="rule-text">700积分——鸵鸟精肉兑换券</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">⑧</text>
+      <text class="rule-text">850积分——鸵鸟郡肝兑换券</text>
+    </view>
+    
+    <view class="rule-item">
+      <text class="rule-number">⑨</text>
+      <text class="rule-text">1000积分——鸵鸟掌兑换券</text>
+    </view>
+    
+    <view class="special-notes">
+      <view class="notes-title">特别说明：</view>
+      <view class="note-item">1.积分永久有效，兑换优惠/商品券后30天内可用；</view>
+      <view class="note-item">2.满减优惠券不可叠加使用；</view>
+      <view class="note-item">3.商品兑换券可叠加使用。</view>
+    </view>
+  </view>
+</view>

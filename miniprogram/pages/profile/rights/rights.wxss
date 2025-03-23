@@ -1,0 +1,54 @@
+page {
+  background-color: #F7F7F2;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.container image {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.header {
+  width: 31.67rpx;
+  height: 31.67rpx;
+  position: absolute;
+  left: 41.67rpx;
+  top: 84rpx;
+  z-index: 1;
+}
+
+.back-icon {
+  width: 31.67rpx;
+  height: 31.67rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 41.67rpx;
+}
+
+.back-icon image {
+  width: 41.67rpx;
+  height: 41.67rpx;
+}
+
+.title {
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  right: 0;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: 400;
+  color: #1C1C1C;
+}

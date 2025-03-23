@@ -1,0 +1,246 @@
+page {
+  background-color: #F7F7F2;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+/* 白色卡片 */
+.withdraw-card {
+  margin-top: 20rpx;
+  background-color: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 20rpx 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 提现方式行 */
+.method-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.row-label {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.method-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.wechat-pay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wechat-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.right-arrow image {
+  width: 18rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}
+
+/* 提现金额行 */
+.amount-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0 10rpx;
+}
+
+.min-amount {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/* 金额输入 */
+.amount-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rpx 0 30rpx;
+}
+
+.currency-symbol {
+  font-size: 48rpx;
+  color: #333333;
+  margin-right: 10rpx;
+}
+
+.amount-input {
+  flex: 1;
+  font-size: 48rpx;
+  height: 70rpx;
+}
+
+/* 余额信息 */
+.balance-info {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 10rpx;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 1.6;
+}
+
+.highlight-amount {
+  color: #FF9500;
+}
+
+/* 提现按钮 */
+.withdraw-button {
+  position: fixed;
+  bottom: 40rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #6D8F56;
+  color: #FFFFFF;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 44rpx;
+}
+
+/* 提现方式选择器相关样式 */
+.method-selector-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.method-selector-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  border-radius: 20rpx 20rpx 0 0;
+  z-index: 1001;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  padding-bottom: 40rpx;
+}
+
+.method-selector-container.show {
+  transform: translateY(0);
+}
+
+.method-selector-header {
+  position: relative;
+  padding: 30rpx 0;
+  text-align: center;
+  border-bottom: 1rpx solid #EEEEEE;
+}
+
+.method-selector-title {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.method-selector-close {
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.method-selector-close image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.method-selector-list {
+  padding: 20rpx 30rpx;
+}
+
+.method-selector-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.method-icon-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.method-selector-icon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+
+.method-selector-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.method-selector-name {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.method-selector-check {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 2rpx solid #DDDDDD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.method-selector-check.selected {
+  border-color: #F9AE49;
+  background-color: #F9AE49;
+}
+
+.check-circle {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  opacity: 0;
+}
+
+.method-selector-check.selected .check-circle {
+  opacity: 1;
+} 
