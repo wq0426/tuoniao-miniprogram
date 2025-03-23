@@ -1,4 +1,36 @@
-<view class="index-container">
-<!-- 在小程序页面中嵌入 -->
-    <web-view src="{{url}}"></web-view>
+<view class="container">
+  <!-- 头部 -->
+  <view class="header">
+    <view class="back-icon" bindtap="navigateBack">
+      <image src="/images/icons/back.png" mode="aspectFit"></image>
+    </view>
+    <view class="title">物流详情</view>
+  </view>
+
+  <!-- 快递公司信息 -->
+  <view class="courier-info">
+    <view class="courier-company">
+      <image class="courier-logo" src="/images/icons/sf.png" mode="aspectFit"></image>
+      <text class="courier-name">顺丰速运</text>
+      <text class="tracking-number">{{trackingNumber}}</text>
+    </view>
+    <view class="copy-btn" bindtap="copyTrackingNumber">复制</view>
+    <view class="call-btn" bindtap="callCourier">打电话</view>
+  </view>
+
+  <!-- 物流时间线 -->
+  <view class="timeline-container">
+    <view class="timeline">
+      <view class="timeline-item {{index === 0 ? 'active' : ''}}" wx:for="{{logistics}}" wx:key="index">
+        <view class="timeline-dot {{index === 0 ? 'active' : ''}}"></view>
+        <view class="timeline-content">
+            <view class="timeline-status-time">
+                <view class="timeline-status">{{item.secondaryStatusName}}</view>
+                <view class="timeline-time">{{item.acceptTime}}</view>
+            </view>
+            <view class="timeline-remark">{{item.remark}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view> 

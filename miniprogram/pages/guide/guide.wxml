@@ -1,6 +1,6 @@
 <view class="guide-container">
   <image class="guide-image" src="https://txtimages.oss-cn-beijing.aliyuncs.com/guide.jpg"></image>
-  <navigator hover-class="none" bindtap="redirectToNextPage">
-    <view class="guide-button-container">立即体验</view>
-  </navigator>
+  <view class="guide-button-container" bindtap="redirectToNextPage">
+    <view class="guide-button">立即体验</view>
+  </view>
 </view>

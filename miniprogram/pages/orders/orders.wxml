@@ -62,7 +62,7 @@
         
         <!-- 待发货状态特有按钮 -->
         <block wx:if="{{item.status > 1 && item.status < 6}}">
-          <view class="action-button secondary" bindtap="checkLogistics" data-id="{{item.product.item_id}}">查看物流</view>
+          <view class="action-button secondary" bindtap="checkLogistics" data-id="{{item.product.item_no}}">查看物流</view>
         </block>
         
         <!-- 待评价状态特有按钮 -->

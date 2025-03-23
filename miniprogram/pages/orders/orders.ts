@@ -23,6 +23,8 @@ Page({
     
     // 获取订单列表
     this.fetchOrders();
+
+    console.log("orders:",this.data.orders);
   },
 
   onShow() {

@@ -349,7 +349,7 @@ button::after {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: -500rpx;
+  bottom: 100rpx;
   background-color: #FFFFFF;
   z-index: 1001;
   border-radius: 24rpx 24rpx 0 0;
@@ -387,7 +387,7 @@ button::after {
 }
 
 .payment-methods {
-  margin-bottom: 40rpx;
+  margin-bottom: 140rpx;
 }
 
 .payment-method {

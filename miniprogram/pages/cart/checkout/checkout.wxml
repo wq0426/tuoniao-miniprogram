@@ -131,6 +131,8 @@
         <image wx:if="{{selectedPaymentMethod === 2}}" src="https://txtimages.oss-cn-beijing.aliyuncs.com/icons/gou.png" mode="aspectFit"></image>
       </view>
     </view>
+
+    <view class="payment-confirm-button" bindtap="confirmPay">确认付款</view>
   </view>
 
   <view class="confirm-modal {{showCancelConfirm ? 'show' : ''}}">
@@ -142,6 +144,4 @@
       </view>
     </view>
   </view>
-  
-  <view class="payment-confirm-button" bindtap="confirmPay">确认付款</view>
 </view> 

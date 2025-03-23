@@ -1,7 +1,7 @@
 Page({
     onLoad() {},
     redirectToNextPage() {
-        wx.redirectTo({
+        wx.navigateTo({
             url: '/pages/auth/auth'
         });
     }
